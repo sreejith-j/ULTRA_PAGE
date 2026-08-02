@@ -1,4 +1,5 @@
 :root {
+    --font-main: 'Inter', sans-serif;
     --bg-dark: #050505;
     --bg-card: rgba(255, 255, 255, 0.03);
     --bg-card-hover: rgba(255, 255, 255, 0.08);
@@ -21,7 +22,7 @@
 body {
     font-family: var(--font-main);
     background-color: var(--bg-dark);
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -31,7 +32,11 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, .logo {
+h1,
+h2,
+h3,
+h4,
+.logo {
     font-family: 'Outfit', sans-serif;
 }
 
@@ -68,8 +73,13 @@ a {
 }
 
 @keyframes float {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
 }
 
 /* Typography */
@@ -154,7 +164,9 @@ p {
 }
 
 /* Buttons */
-.btn-primary, .btn-secondary, .btn-primary-small {
+.btn-primary,
+.btn-secondary,
+.btn-primary-small {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -266,9 +278,17 @@ p {
 }
 
 @keyframes floatingMockup {
-    0% { transform: translateY(0px) rotateX(5deg) rotateY(-5deg); }
-    50% { transform: translateY(-20px) rotateX(0deg) rotateY(0deg); }
-    100% { transform: translateY(0px) rotateX(5deg) rotateY(-5deg); }
+    0% {
+        transform: translateY(0px) rotateX(5deg) rotateY(-5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotateX(5deg) rotateY(-5deg);
+    }
 }
 
 /* Generic Section Styles */
@@ -311,7 +331,10 @@ p {
 .bento-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     border-radius: var(--border-radius);
     padding: 2px;
     background: linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(37, 99, 235, 0.5));
@@ -406,8 +429,15 @@ p {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .tag-task {
@@ -787,11 +817,11 @@ footer {
     .nav-links {
         display: none;
     }
-    
+
     .cta-group {
         flex-direction: column;
     }
-    
+
     .hero {
         padding-top: 8rem;
         flex-direction: column;
@@ -810,19 +840,19 @@ footer {
     .hero p {
         margin: 0 auto 2.5rem;
     }
-    
+
     .timeline::before {
         left: 15px;
     }
-    
+
     .timeline-dot {
         left: 8px;
     }
-    
+
     .timeline-item {
         padding-left: 45px;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 1rem;
@@ -908,11 +938,9 @@ footer {
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: radial-gradient(
-        500px circle at var(--mouse-x, 0) var(--mouse-y, 0),
-        rgba(124, 58, 237, 0.6),
-        transparent 40%
-    );
+    background: radial-gradient(500px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+            rgba(124, 58, 237, 0.6),
+            transparent 40%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -970,9 +998,20 @@ footer {
 }
 
 @keyframes iconPulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
-    70% { transform: scale(1.1); box-shadow: 0 0 0 12px rgba(124, 58, 237, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4);
+    }
+
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 12px rgba(124, 58, 237, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    }
 }
 
 .trigger-card .card-icon {
@@ -1141,6 +1180,7 @@ footer {
 }
 
 @media (max-width: 980px) {
+
     .trigger-grid,
     .use-case-grid,
     .review-grid,
@@ -1215,6 +1255,7 @@ footer {
 }
 
 @media (max-width: 480px) {
+
     .btn-primary,
     .btn-secondary,
     .download-btn {
