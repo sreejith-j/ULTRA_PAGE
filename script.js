@@ -178,4 +178,67 @@ document.addEventListener('DOMContentLoaded', () => {
             showcaseGallery.scrollBy({ left: 420, behavior: 'smooth' });
         });
     }
+
+    // Reviews logic
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    if (reviewsContainer) {
+        const allReviews = [
+            { name: "Ankit Sharma", text: "The only thing I don't like is the occasional Toast notification for Geofence other than that it works like a charm. I downloaded this for location reminders, I added some and then forgot about them and then months later I was pleasantly surprised to see it pop up right before I arrived at the specified location." },
+            { name: "Yashaswini M S", text: "Simple, innovative and incredibly useful for everyday life." },
+            { name: "Preethi Sachin", text: "simple and uswful for daily reminders and tasks" },
+            { name: "vikas raj", text: "I really love this app, really so good, which keeps me remind everything" },
+            { name: "Adith GM", text: "Hi Sreejith, Great Work. Love your App." },
+            { name: "Sashi V", text: "Multi functional app for various activity based tasks and device based alarms especially on battery related." },
+            { name: "sudheer singampalli", text: "wonderfully useful!!" },
+            { name: "Syam Vijaya Krishnan", text: "Awesome!" },
+            { name: "XBEAST", text: "Amazing App" },
+            { name: "Prasanna Hegde", text: "very good" },
+            { name: "Rohit Pokala", text: "Nice app" }
+        ];
+
+        // Shuffle array using Fisher-Yates
+        const shuffledReviews = [...allReviews];
+        for (let i = shuffledReviews.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledReviews[i], shuffledReviews[j]] = [shuffledReviews[j], shuffledReviews[i]];
+        }
+
+        // Select top 5
+        const selectedReviews = shuffledReviews.slice(0, 5);
+
+        // Render reviews
+        selectedReviews.forEach((review, index) => {
+            const delay = index * 0.1;
+            const article = document.createElement('article');
+            article.className = 'review-card fade-in-up';
+            if (delay > 0) article.style.transitionDelay = `${delay}s`;
+
+            article.innerHTML = `
+                <div class="stars">★★★★★</div>
+                <p>"${review.text}"</p>
+                <span class="reviewer-name">- ${review.name}</span>
+            `;
+            reviewsContainer.appendChild(article);
+            
+            // Add to IntersectionObserver to animate on scroll
+            if (typeof observer !== 'undefined') {
+                observer.observe(article);
+            }
+        });
+    }
+
+    // Mouse tracking for trigger cards (Cyber glow effect)
+    const handleOnMouseMove = e => {
+        const { currentTarget: target } = e;
+        const rect = target.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+        target.style.setProperty("--mouse-x", `${x}px`);
+        target.style.setProperty("--mouse-y", `${y}px`);
+    };
+
+    for(const card of document.querySelectorAll(".trigger-card")) {
+        card.addEventListener("mousemove", handleOnMouseMove);
+    }
 });
