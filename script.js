@@ -183,6 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewsContainer = document.getElementById('reviewsContainer');
     if (reviewsContainer) {
         const allReviews = [
+            { name: "Wayne Miller", text: "Just awesome. Easy way to remind me of things based on time, location, etc" },
+            { name: "乃ㄥ丨几ᗪ乃卂ㄒ", text: "awesome app. I've been searching for one like this for a long time." },
+            { name: "Wahid Hussain", text: "Currently, when the checkmark is clicked, the task is marked as completed immediately. Could you add a confirmation dialog before completing the task or an Undo option after completion would also be helpful. Thanks." },
             { name: "Ankit Sharma", text: "The only thing I don't like is the occasional Toast notification for Geofence other than that it works like a charm. I downloaded this for location reminders, I added some and then forgot about them and then months later I was pleasantly surprised to see it pop up right before I arrived at the specified location." },
             { name: "Yashaswini M S", text: "Simple, innovative and incredibly useful for everyday life." },
             { name: "Preethi Sachin", text: "simple and uswful for daily reminders and tasks" },
@@ -203,8 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
             [shuffledReviews[i], shuffledReviews[j]] = [shuffledReviews[j], shuffledReviews[i]];
         }
 
-        // Select top 5
-        const selectedReviews = shuffledReviews.slice(0, 5);
+        // Select top 6
+        const selectedReviews = shuffledReviews.slice(0, 6);
 
         // Render reviews
         selectedReviews.forEach((review, index) => {
@@ -227,7 +230,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mouse tracking for trigger cards (Cyber glow effect)
+    // Copy email to clipboard with visual confirmation
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const email = 'ultraappsupport@gmail.com';
+            let copied = false;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                try {
+                    await navigator.clipboard.writeText(email);
+                    copied = true;
+                } catch (_) {
+                    copied = false;
+                }
+            }
+
+            if (!copied) {
+                try {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = email;
+                    textArea.style.position = 'fixed';
+                    textArea.style.left = '-9999px';
+                    textArea.style.top = '-9999px';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                } catch (err) {
+                    console.warn('Clipboard fallback notice:', err);
+                }
+            }
+
+            const label = copyEmailBtn.querySelector('.copy-label');
+            const originalText = label ? label.textContent : 'Copy';
+            copyEmailBtn.classList.add('copied');
+            if (label) label.textContent = 'Copied!';
+            setTimeout(() => {
+                copyEmailBtn.classList.remove('copied');
+                if (label) label.textContent = originalText;
+            }, 2200);
+        });
+    }
+
+    // Mouse tracking for trigger cards & contact cards (Cyber glow effect)
     const handleOnMouseMove = e => {
         const { currentTarget: target } = e;
         const rect = target.getBoundingClientRect(),
@@ -238,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
         target.style.setProperty("--mouse-y", `${y}px`);
     };
 
-    for(const card of document.querySelectorAll(".trigger-card")) {
+    for(const card of document.querySelectorAll(".trigger-card, .contact-card")) {
         card.addEventListener("mousemove", handleOnMouseMove);
     }
 });

@@ -1278,11 +1278,228 @@ footer {
     margin-top: auto;
 }
 
+/* Contact & Support Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--border-radius);
+    padding: 2.25rem 2rem;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.contact-card.email-card:hover {
+    border-color: rgba(124, 58, 237, 0.45);
+}
+
+.contact-card.social-card:hover {
+    border-color: rgba(56, 189, 248, 0.45);
+}
+
+.contact-card.info-card:hover {
+    border-color: rgba(52, 211, 153, 0.45);
+}
+
+.contact-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon-wrap {
+    transform: scale(1.08);
+}
+
+.email-icon {
+    background: rgba(124, 58, 237, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.linkedin-icon {
+    background: rgba(14, 165, 233, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.x-icon {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-icon {
+    background: rgba(52, 211, 153, 0.15);
+    color: #6ee7b7;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.contact-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contact-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    color: #a1a1aa;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card h3 {
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.contact-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.email-action-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-email-link {
+    font-family: 'Inter', monospace;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #c4b5fd;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+    transition: var(--transition-smooth);
+}
+
+.contact-email-link:hover {
+    color: #ffffff;
+}
+
+.copy-email-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-family: var(--font-main);
+}
+
+.copy-email-btn:hover {
+    background: rgba(124, 58, 237, 0.25);
+    border-color: rgba(124, 58, 237, 0.5);
+    transform: translateY(-1px);
+}
+
+.copy-email-btn.copied {
+    background: rgba(52, 211, 153, 0.25);
+    border-color: rgba(52, 211, 153, 0.6);
+    color: #6ee7b7;
+}
+
+.contact-action-link,
+.contact-play-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+}
+
+.contact-card:hover .contact-action-link,
+.contact-card:hover .contact-play-btn {
+    color: #ffffff;
+}
+
+.contact-action-link .arrow,
+.contact-play-btn .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.contact-card:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* Enhanced Footer */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
 @media (max-width: 980px) {
 
     .trigger-grid,
     .use-case-grid,
     .review-grid,
+    .contact-grid,
     .smart-layout {
         grid-template-columns: 1fr 1fr;
     }
@@ -1316,6 +1533,7 @@ footer {
     .trigger-grid,
     .use-case-grid,
     .review-grid,
+    .contact-grid,
     .smart-layout {
         grid-template-columns: 1fr;
     }
@@ -1323,6 +1541,7 @@ footer {
     .trigger-card,
     .use-case,
     .review-card,
+    .contact-card,
     .example-panel {
         padding: 1.25rem;
     }
