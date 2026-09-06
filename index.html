@@ -52,6 +52,7 @@
                 <a href="#features">Triggers</a>
                 <a href="#smart-input">Smart Input</a>
                 <a href="#use-cases">Use cases</a>
+                <a href="#beta-languages">Languages <span class="nav-badge-beta">Beta</span></a>
                 <a href="#featured">Featured</a>
                 <a href="#reviews">Reviews</a>
                 <a href="#contact">Contact</a>
@@ -261,6 +262,197 @@
             <button class="scroll-btn scroll-right" id="scrollRight" aria-label="Scroll right">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
+        </div>
+    </section>
+
+    <section id="beta-languages" class="beta-languages section">
+        <div class="section-header fade-in-up">
+            <div class="badge beta-pill-badge">
+                <span class="pulse-dot"></span> New Beta Release &bull; Multi-Language Support
+            </div>
+            <h2>Join Beta to Use ULTRA in <span class="text-gradient">Your Language.</span></h2>
+            <p>ULTRA now speaks 7 languages natively. Experience private alarms, location geofences, routines, notifications, and home screen widgets completely in your native tongue.</p>
+        </div>
+
+        <!-- Interactive Preview Box -->
+        <div class="lang-preview-showcase fade-in-up">
+            <div class="lang-preview-info">
+                <span class="preview-kicker">Interactive Localized Preview</span>
+                <h3 id="activeLangTitle">Español (Spanish)</h3>
+                <p id="activeLangDesc">Full interface, alarm popups, background foreground services, notifications, and home screen widgets adapt automatically to your locale.</p>
+                <div class="preview-meta">
+                    <span class="meta-item"><span class="meta-icon">&#10003;</span> 535 Translated Strings</span>
+                    <span class="meta-item"><span class="meta-icon">&#10003;</span> Localized Notifications &amp; Widgets</span>
+                    <span class="meta-item"><span class="meta-icon">&#10003;</span> Native System Locale Auto-detection</span>
+                </div>
+            </div>
+
+            <div class="lang-preview-card-wrap">
+                <div class="simulated-phone-card" id="simulatedAlarm">
+                    <div class="sim-header">
+                        <span class="sim-app-badge">ULTRA &bull; ALARM</span>
+                        <span class="sim-time" id="simTime">08:30</span>
+                    </div>
+                    <div class="sim-body">
+                        <div class="sim-icon-circle">&#128138;</div>
+                        <div class="sim-details">
+                            <h4 id="simReminderTitle">Tomar suplementos vitamínicos</h4>
+                            <span class="sim-tag" id="simTriggerTag">&#128205; Ubicación: Casa</span>
+                        </div>
+                    </div>
+                    <div class="sim-actions">
+                        <button type="button" class="sim-btn sim-snooze" id="simSnoozeBtn">Posponer 10 min</button>
+                        <button type="button" class="sim-btn sim-dismiss" id="simDismissBtn">Descartar</button>
+                    </div>
+                </div>
+                <div class="preview-tap-hint">Tap any language card below to test preview</div>
+            </div>
+        </div>
+
+        <!-- Languages Grid -->
+        <div class="lang-grid">
+            <!-- English -->
+            <article class="lang-card fade-in-up" data-lang="en" tabindex="0" role="button" aria-label="Select English">
+                <div class="lang-card-top">
+                    <span class="lang-flag" aria-hidden="true">&#127760;</span>
+                    <span class="lang-code-pill">EN</span>
+                    <span class="lang-status-badge status-live">Live</span>
+                </div>
+                <div class="lang-card-main">
+                    <h3 class="lang-native-name">English</h3>
+                    <span class="lang-english-name">Global / Default</span>
+                    <p class="lang-sample-quote">&ldquo;Call dentist tomorrow at 3:00 PM&rdquo;</p>
+                </div>
+                <div class="lang-card-footer">
+                    <span class="lang-feature-tag">100% Native &bull; Smart Input Enabled</span>
+                </div>
+            </article>
+
+            <!-- Spanish -->
+            <article class="lang-card active fade-in-up" data-lang="es" tabindex="0" role="button" aria-label="Select Spanish" style="transition-delay: 0.05s;">
+                <div class="lang-card-top">
+                    <span class="lang-flag" aria-hidden="true">&#127466;&#127488;</span>
+                    <span class="lang-code-pill">ES</span>
+                    <span class="lang-status-badge status-beta"><span class="pulse-dot-mini"></span> In Beta</span>
+                </div>
+                <div class="lang-card-main">
+                    <h3 class="lang-native-name">Español</h3>
+                    <span class="lang-english-name">Spanish</span>
+                    <p class="lang-sample-quote">&ldquo;Llamar al dentista mañana a las 15:00&rdquo;</p>
+                </div>
+                <div class="lang-card-footer">
+                    <span class="lang-feature-tag">535 Strings Localized &bull; Full App UI</span>
+                </div>
+            </article>
+
+            <!-- German -->
+            <article class="lang-card fade-in-up" data-lang="de" tabindex="0" role="button" aria-label="Select German" style="transition-delay: 0.1s;">
+                <div class="lang-card-top">
+                    <span class="lang-flag" aria-hidden="true">&#127465;&#127466;</span>
+                    <span class="lang-code-pill">DE</span>
+                    <span class="lang-status-badge status-beta"><span class="pulse-dot-mini"></span> In Beta</span>
+                </div>
+                <div class="lang-card-main">
+                    <h3 class="lang-native-name">Deutsch</h3>
+                    <span class="lang-english-name">German</span>
+                    <p class="lang-sample-quote">&ldquo;Zahnarzt morgen um 15:00 Uhr anrufen&rdquo;</p>
+                </div>
+                <div class="lang-card-footer">
+                    <span class="lang-feature-tag">535 Strings Localized &bull; Full App UI</span>
+                </div>
+            </article>
+
+            <!-- French -->
+            <article class="lang-card fade-in-up" data-lang="fr" tabindex="0" role="button" aria-label="Select French" style="transition-delay: 0.15s;">
+                <div class="lang-card-top">
+                    <span class="lang-flag" aria-hidden="true">&#127467;&#127479;</span>
+                    <span class="lang-code-pill">FR</span>
+                    <span class="lang-status-badge status-beta"><span class="pulse-dot-mini"></span> In Beta</span>
+                </div>
+                <div class="lang-card-main">
+                    <h3 class="lang-native-name">Français</h3>
+                    <span class="lang-english-name">French</span>
+                    <p class="lang-sample-quote">&ldquo;Appeler le dentiste demain à 15h00&rdquo;</p>
+                </div>
+                <div class="lang-card-footer">
+                    <span class="lang-feature-tag">535 Strings Localized &bull; Full App UI</span>
+                </div>
+            </article>
+
+            <!-- Portuguese -->
+            <article class="lang-card fade-in-up" data-lang="pt" tabindex="0" role="button" aria-label="Select Portuguese" style="transition-delay: 0.2s;">
+                <div class="lang-card-top">
+                    <span class="lang-flag" aria-hidden="true">&#127463;&#127479;</span>
+                    <span class="lang-code-pill">PT</span>
+                    <span class="lang-status-badge status-beta"><span class="pulse-dot-mini"></span> In Beta</span>
+                </div>
+                <div class="lang-card-main">
+                    <h3 class="lang-native-name">Português</h3>
+                    <span class="lang-english-name">Portuguese</span>
+                    <p class="lang-sample-quote">&ldquo;Ligar para o dentista amanhã às 15:00&rdquo;</p>
+                </div>
+                <div class="lang-card-footer">
+                    <span class="lang-feature-tag">535 Strings Localized &bull; Full App UI</span>
+                </div>
+            </article>
+
+            <!-- Japanese -->
+            <article class="lang-card fade-in-up" data-lang="ja" tabindex="0" role="button" aria-label="Select Japanese" style="transition-delay: 0.25s;">
+                <div class="lang-card-top">
+                    <span class="lang-flag" aria-hidden="true">&#127471;&#127477;</span>
+                    <span class="lang-code-pill">JA</span>
+                    <span class="lang-status-badge status-beta"><span class="pulse-dot-mini"></span> In Beta</span>
+                </div>
+                <div class="lang-card-main">
+                    <h3 class="lang-native-name">日本語</h3>
+                    <span class="lang-english-name">Japanese</span>
+                    <p class="lang-sample-quote">&ldquo;明日午後3時に歯医者に電話する&rdquo;</p>
+                </div>
+                <div class="lang-card-footer">
+                    <span class="lang-feature-tag">535 Strings Localized &bull; Full App UI</span>
+                </div>
+            </article>
+
+            <!-- Hindi -->
+            <article class="lang-card fade-in-up" data-lang="hi" tabindex="0" role="button" aria-label="Select Hindi" style="transition-delay: 0.3s;">
+                <div class="lang-card-top">
+                    <span class="lang-flag" aria-hidden="true">&#127470;&#127475;</span>
+                    <span class="lang-code-pill">HI</span>
+                    <span class="lang-status-badge status-beta"><span class="pulse-dot-mini"></span> In Beta</span>
+                </div>
+                <div class="lang-card-main">
+                    <h3 class="lang-native-name">हिन्दी</h3>
+                    <span class="lang-english-name">Hindi</span>
+                    <p class="lang-sample-quote">&ldquo;कल दोपहर 3 बजे डेंटिस्ट को कॉल करें&rdquo;</p>
+                </div>
+                <div class="lang-card-footer">
+                    <span class="lang-feature-tag">535 Strings Localized &bull; Full App UI</span>
+                </div>
+            </article>
+        </div>
+
+        <!-- Beta CTA & Notice Banner -->
+        <div class="beta-cta-banner fade-in-up" style="transition-delay: 0.2s;">
+            <div class="beta-cta-content">
+                <span class="beta-banner-tag">Google Play Beta Program</span>
+                <h3>Ready to test ULTRA in your language?</h3>
+                <p>Join our open Google Play beta track to get early access to localized updates before the general release.</p>
+                <div class="beta-cta-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
+                            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.924V2.738a2.38 2.38 0 0 1 .609-.924zm11.242 11.245l2.457-2.457a1.002 1.002 0 0 0 0-1.204l-2.457-2.457-7.893 7.893 7.893-1.775zm-1.059-8.95L4.85 1.096a1.996 1.996 0 0 1 1.704-.158l7.238 3.171zm0 15.782l-7.238 3.171a1.996 1.996 0 0 1-1.704-.158l8.942-3.013z"/>
+                        </svg>
+                        Join Beta on Google Play
+                    </a>
+                    <a href="#contact" class="btn-secondary">Request Your Language &rarr;</a>
+                </div>
+            </div>
+            <div class="beta-smart-note">
+                <div class="note-icon">&#128161;</div>
+                <div class="note-text">
+                    <strong>Smart Input Note:</strong> All reminders, alarms, foreground tracking, notifications, and home widgets are 100% localized in your native language. Natural language Smart Input currently parses English sentences.
+                </div>
+            </div>
         </div>
     </section>
 
@@ -496,6 +688,24 @@
                 </button>
                 <div class="faq-answer">
                     <p>Yes. ULTRA includes export and import support so you can keep a local backup and restore your reminder configuration when needed.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do I join the multi-language beta?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Open the ULTRA page on Google Play Store from your Android device, scroll down to the &ldquo;Join the beta&rdquo; section, tap &ldquo;Join&rdquo;, and update to the latest beta release. Once installed, ULTRA will automatically adapt to your phone's system language, or you can switch languages directly in the app settings.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What if my language isn't supported yet?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We are actively expanding language support! If you'd like ULTRA in your native language, reach out via our contact section or email ultraappsupport@gmail.com with your preferred language.</p>
                 </div>
             </div>
         </div>

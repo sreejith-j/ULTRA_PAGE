@@ -275,7 +275,172 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mouse tracking for trigger cards & contact cards (Cyber glow effect)
+    // Multi-Language Beta Interactive Showcase
+    const langData = {
+        en: {
+            title: "English (Global / Default)",
+            desc: "Full interface, alarm popups, background foreground services, notifications, and home screen widgets adapt automatically to your locale.",
+            reminderTitle: "Take vitamin supplements",
+            triggerTag: "📍 Location: Home",
+            time: "08:30 AM",
+            snooze: "Snooze 10m",
+            dismiss: "Dismiss",
+            snoozedNotice: "Snoozed for 10 min",
+            dismissedNotice: "Alarm dismissed"
+        },
+        es: {
+            title: "Español (Spanish)",
+            desc: "Interfaz completa, pantallas de alarma, servicios en segundo plano, notificaciones y widgets de pantalla de inicio adaptados nativamente.",
+            reminderTitle: "Tomar suplementos vitamínicos",
+            triggerTag: "📍 Ubicación: Casa",
+            time: "08:30",
+            snooze: "Posponer 10 min",
+            dismiss: "Descartar",
+            snoozedNotice: "Pospuesto 10 min",
+            dismissedNotice: "Alarma descartada"
+        },
+        de: {
+            title: "Deutsch (German)",
+            desc: "Vollständige Benutzeroberfläche, Alarm-Overlays, Hintergrunddienste, Benachrichtigungen und Startbildschirm-Widgets auf Deutsch.",
+            reminderTitle: "Vitamine einnehmen",
+            triggerTag: "📍 Standort: Zuhause",
+            time: "08:30",
+            snooze: "Schlummern 10 Min.",
+            dismiss: "Schließen",
+            snoozedNotice: "10 Min. zurückgestellt",
+            dismissedNotice: "Alarm beendet"
+        },
+        fr: {
+            title: "Français (French)",
+            desc: "Interface complète, popups d'alarme, services d'arrière-plan, notifications et widgets d'écran d'accueil entièrement en français.",
+            reminderTitle: "Prendre les vitamines",
+            triggerTag: "📍 Lieu: Domicile",
+            time: "08:30",
+            snooze: "Répéter 10 min",
+            dismiss: "Ignorer",
+            snoozedNotice: "Répété dans 10 min",
+            dismissedNotice: "Alarme ignorée"
+        },
+        pt: {
+            title: "Português (Portuguese)",
+            desc: "Interface completa, telas de alarme, serviços em segundo plano, notificações e widgets de tela inicial nativamente em português.",
+            reminderTitle: "Tomar vitaminas",
+            triggerTag: "📍 Local: Casa",
+            time: "08:30",
+            snooze: "Soneca 10 min",
+            dismiss: "Dispensar",
+            snoozedNotice: "Soneca de 10 min",
+            dismissedNotice: "Alarme dispensado"
+        },
+        ja: {
+            title: "日本語 (Japanese)",
+            desc: "完全なUI、アラーム画面、バックグラウンド監視サービス、通知、ホーム画面ウィジェットが日本語にネイティブ対応。",
+            reminderTitle: "ビタミン剤を飲む",
+            triggerTag: "📍 場所: 自宅",
+            time: "08:30",
+            snooze: "スヌーズ 10分",
+            dismiss: "解除",
+            snoozedNotice: "10分間スヌーズ",
+            dismissedNotice: "アラームを解除しました"
+        },
+        hi: {
+            title: "हिन्दी (Hindi)",
+            desc: "संपूर्ण ऐप इंटरफ़ेस, अलार्म स्क्रीन, बैकग्राउंड सेवाएँ, सूचनाएं और होम स्क्रीन विजेट्स पूरी तरह से हिन्दी में उपलब्ध हैं।",
+            reminderTitle: "विटामिन की दवा लें",
+            triggerTag: "📍 स्थान: घर",
+            time: "08:30",
+            snooze: "10 मिनट स्नूज़ करें",
+            dismiss: "खारिज करें",
+            snoozedNotice: "10 मिनट के लिए स्नूज़ किया गया",
+            dismissedNotice: "अलार्म बंद किया गया"
+        }
+    };
+
+    const langCards = document.querySelectorAll('.lang-card');
+    const activeLangTitle = document.getElementById('activeLangTitle');
+    const activeLangDesc = document.getElementById('activeLangDesc');
+    const simTime = document.getElementById('simTime');
+    const simReminderTitle = document.getElementById('simReminderTitle');
+    const simTriggerTag = document.getElementById('simTriggerTag');
+    const simSnoozeBtn = document.getElementById('simSnoozeBtn');
+    const simDismissBtn = document.getElementById('simDismissBtn');
+    const simulatedAlarm = document.getElementById('simulatedAlarm');
+    let currentActiveLang = 'es';
+
+    const switchLanguagePreview = (langCode) => {
+        const data = langData[langCode];
+        if (!data) return;
+        currentActiveLang = langCode;
+
+        // Update active card class
+        langCards.forEach(card => {
+            if (card.dataset.lang === langCode) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+
+        // Update preview content with subtle animation
+        if (activeLangTitle) activeLangTitle.textContent = data.title;
+        if (activeLangDesc) activeLangDesc.textContent = data.desc;
+        if (simTime) simTime.textContent = data.time;
+        if (simReminderTitle) simReminderTitle.textContent = data.reminderTitle;
+        if (simTriggerTag) simTriggerTag.textContent = data.triggerTag;
+        if (simSnoozeBtn) simSnoozeBtn.textContent = data.snooze;
+        if (simDismissBtn) simDismissBtn.textContent = data.dismiss;
+
+        if (simulatedAlarm) {
+            simulatedAlarm.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                simulatedAlarm.style.transform = '';
+            }, 180);
+        }
+    };
+
+    langCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const lang = card.dataset.lang;
+            if (lang) switchLanguagePreview(lang);
+        });
+
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const lang = card.dataset.lang;
+                if (lang) switchLanguagePreview(lang);
+            }
+        });
+    });
+
+    // Simulated Alarm Interactive Feedback
+    if (simSnoozeBtn) {
+        simSnoozeBtn.addEventListener('click', () => {
+            const data = langData[currentActiveLang];
+            const original = simSnoozeBtn.textContent;
+            simSnoozeBtn.textContent = data ? data.snoozedNotice : 'Snoozed!';
+            simSnoozeBtn.style.background = 'rgba(52, 211, 153, 0.25)';
+            simSnoozeBtn.style.borderColor = 'rgba(52, 211, 153, 0.6)';
+            setTimeout(() => {
+                simSnoozeBtn.textContent = original;
+                simSnoozeBtn.style.background = '';
+                simSnoozeBtn.style.borderColor = '';
+            }, 1600);
+        });
+    }
+
+    if (simDismissBtn) {
+        simDismissBtn.addEventListener('click', () => {
+            const data = langData[currentActiveLang];
+            const original = simDismissBtn.textContent;
+            simDismissBtn.textContent = data ? data.dismissedNotice : 'Dismissed!';
+            setTimeout(() => {
+                simDismissBtn.textContent = original;
+            }, 1600);
+        });
+    }
+
+    // Mouse tracking for trigger cards, contact cards, and language cards (Cyber glow effect)
     const handleOnMouseMove = e => {
         const { currentTarget: target } = e;
         const rect = target.getBoundingClientRect(),
@@ -286,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
         target.style.setProperty("--mouse-y", `${y}px`);
     };
 
-    for(const card of document.querySelectorAll(".trigger-card, .contact-card")) {
+    for(const card of document.querySelectorAll(".trigger-card, .contact-card, .lang-card")) {
         card.addEventListener("mousemove", handleOnMouseMove);
     }
 });
