@@ -1495,9 +1495,10 @@ footer {
 }
 
 /* ==========================================================================
-   Multi-Language Beta Section & Interactive Preview
+   Multi-Language Section & Interactive Preview
    ========================================================================== */
 
+.nav-badge-live,
 .nav-badge-beta {
     background: var(--accent-gradient);
     font-size: 0.65rem;
@@ -1846,9 +1847,9 @@ footer {
 }
 
 .lang-status-badge.status-live {
-    background: rgba(56, 189, 248, 0.15);
-    color: #38bdf8;
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .lang-status-badge.status-beta {

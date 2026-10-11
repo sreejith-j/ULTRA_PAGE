@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Multi-Language Beta Interactive Showcase
+    // Multi-Language Interactive Showcase
     const langData = {
         en: {
             title: "English (Global / Default)",
@@ -353,6 +353,17 @@ document.addEventListener('DOMContentLoaded', () => {
             dismiss: "खारिज करें",
             snoozedNotice: "10 मिनट के लिए स्नूज़ किया गया",
             dismissedNotice: "अलार्म बंद किया गया"
+        },
+        it: {
+            title: "Italiano (Italian)",
+            desc: "Interfaccia completa, popup di allarme, servizi in background, notifiche e widget della schermata iniziale completamente in italiano.",
+            reminderTitle: "Prendere gli integratori vitaminici",
+            triggerTag: "📍 Posizione: Casa",
+            time: "08:30",
+            snooze: "Posticipa 10 min",
+            dismiss: "Ignora",
+            snoozedNotice: "Posticipato di 10 min",
+            dismissedNotice: "Allarme disattivato"
         }
     };
 
