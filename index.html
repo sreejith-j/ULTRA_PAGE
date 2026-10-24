@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=9">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZFKHHV78Z"></script>
@@ -45,6 +45,17 @@
     <div class="glow-orb orb-1"></div>
     <div class="glow-orb orb-2"></div>
 
+    <aside class="top-announcement-bar" aria-label="Support announcement">
+        <div class="top-announcement-inner">
+            <span class="announcement-badge"><span class="coffee-cup-icon">☕</span> Support ULTRA</span>
+            <span class="announcement-text">100% free, private &amp; ad-free. Love using it?</span>
+            <a href="https://buymeacoffee.com/sreejithj" target="_blank" rel="noopener noreferrer" class="announcement-link">
+                <span>Buy me a coffee</span>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+    </aside>
+
     <nav class="navbar">
         <div class="nav-content">
             <a href="#" class="logo" aria-label="ULTRA home">ULTRA</a>
@@ -56,9 +67,22 @@
                 <a href="#featured">Featured</a>
                 <a href="#reviews">Reviews</a>
                 <a href="#contact">Contact</a>
+                <a href="https://buymeacoffee.com/sreejithj" target="_blank" rel="noopener noreferrer" class="btn-nav-coffee" aria-label="Support ULTRA on Buy Me a Coffee" title="Buy me a coffee">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                        <line x1="6" y1="1" x2="6" y2="4"></line>
+                        <line x1="10" y1="1" x2="10" y2="4"></line>
+                        <line x1="14" y1="1" x2="14" y2="4"></line>
+                    </svg>
+                    <span>Buy a Coffee</span>
+                </a>
                 <a href="#download" class="btn-primary-small">Download</a>
             </div>
-            <a href="#download" class="mobile-download">Download</a>
+            <div class="mobile-nav-group">
+                <a href="https://buymeacoffee.com/sreejithj" target="_blank" rel="noopener noreferrer" class="mobile-coffee-btn" aria-label="Support ULTRA on Buy Me a Coffee" title="Buy me a coffee">☕</a>
+                <a href="#download" class="mobile-download">Download</a>
+            </div>
         </div>
     </nav>
 
@@ -788,6 +812,37 @@
             <p>Have questions, feedback, bug reports, or feature ideas? Connect with us directly.</p>
         </div>
 
+        <!-- Buy Me a Coffee Featured Callout Banner -->
+        <div class="coffee-feature-banner fade-in-up" data-tilt data-tilt-max="3" data-tilt-speed="400">
+            <div class="coffee-feature-left">
+                <div class="coffee-feature-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                        <line x1="6" y1="1" x2="6" y2="4"></line>
+                        <line x1="10" y1="1" x2="10" y2="4"></line>
+                        <line x1="14" y1="1" x2="14" y2="4"></line>
+                    </svg>
+                </div>
+                <div class="coffee-feature-text">
+                    <span class="coffee-feature-tag">Support Independent Android Development</span>
+                    <h3>Love using ULTRA? Buy Me a Coffee</h3>
+                    <p>ULTRA is 100% free, private, and ad-free. No corporate investors, no tracking, and no paywalled alarms. If ULTRA helps your daily routines, buying a coffee is a great way to support its creator and help keep updates coming.</p>
+                </div>
+            </div>
+            <a href="https://buymeacoffee.com/sreejithj" target="_blank" rel="noopener noreferrer" class="btn-coffee-banner" aria-label="Support ULTRA on Buy Me a Coffee">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+                <span>Buy me a coffee</span>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+
         <div class="contact-grid">
             <!-- Email Support Card -->
             <div class="contact-card email-card fade-in-up" style="transition-delay: 0.05s;">
@@ -811,8 +866,30 @@
                 </div>
             </div>
 
+            <!-- Bug Reporting & Feedback Tips Card -->
+            <div class="contact-card info-card fade-in-up" style="transition-delay: 0.1s;">
+                <div class="contact-icon-wrap info-icon">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                </div>
+                <div class="contact-card-body">
+                    <span class="contact-tag">Tips &amp; Reviews</span>
+                    <h3>Reporting an Issue?</h3>
+                    <p>Sharing your Android version &amp; device model helps us investigate faster. You can also rate ULTRA on Google Play!</p>
+                    <div class="contact-mini-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="contact-play-btn">
+                            <span>Google Play Store</span>
+                            <span class="arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- LinkedIn Card -->
-            <a href="https://www.linkedin.com/in/sreejithj/" target="_blank" rel="noopener noreferrer" class="contact-card social-card fade-in-up" style="transition-delay: 0.12s;">
+            <a href="https://www.linkedin.com/in/sreejithj/" target="_blank" rel="noopener noreferrer" class="contact-card social-card fade-in-up" style="transition-delay: 0.15s;">
                 <div class="contact-icon-wrap linkedin-icon">
                     <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
                         <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3Z"></path>
@@ -830,14 +907,14 @@
             </a>
 
             <!-- X (Twitter) Card -->
-            <a href="https://x.com/sreejithjayadev" target="_blank" rel="noopener noreferrer" class="contact-card social-card fade-in-up" style="transition-delay: 0.18s;">
+            <a href="https://x.com/sreejithjayadev" target="_blank" rel="noopener noreferrer" class="contact-card social-card fade-in-up" style="transition-delay: 0.2s;">
                 <div class="contact-icon-wrap x-icon">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                     </svg>
                 </div>
                 <div class="contact-card-body">
-                    <span class="contact-tag">Updates & Chat</span>
+                    <span class="contact-tag">Updates &amp; Chat</span>
                     <h3>X (Twitter)</h3>
                     <p>Follow @sreejithjayadev for latest app updates, upcoming feature announcements, and direct messages.</p>
                     <div class="contact-action-link">
@@ -846,28 +923,6 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Bug Reporting & Feedback Tips Card -->
-            <div class="contact-card info-card fade-in-up" style="transition-delay: 0.24s;">
-                <div class="contact-icon-wrap info-icon">
-                    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="16" x2="12" y2="12"></line>
-                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                </div>
-                <div class="contact-card-body">
-                    <span class="contact-tag">Tips & Reviews</span>
-                    <h3>Reporting an Issue?</h3>
-                    <p>Sharing your Android version & device model helps us investigate faster. You can also rate ULTRA on Google Play!</p>
-                    <div class="contact-mini-actions">
-                        <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="contact-play-btn">
-                            <span>Google Play Store</span>
-                            <span class="arrow">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -881,6 +936,19 @@
                     <img alt="Get it on Google Play" src="play_store_badge.svg" style="height: 64px;">
                 </a>
             </div>
+            <div class="download-support-note">
+                <p>100% free, private, and ad-free. Crafted independently with care.</p>
+                <a href="https://buymeacoffee.com/sreejithj" target="_blank" rel="noopener noreferrer" class="btn-coffee-download" aria-label="Support ULTRA on Buy Me a Coffee">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                        <line x1="6" y1="1" x2="6" y2="4"></line>
+                        <line x1="10" y1="1" x2="10" y2="4"></line>
+                        <line x1="14" y1="1" x2="14" y2="4"></line>
+                    </svg>
+                    <span>Buy me a coffee</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -892,6 +960,7 @@
             </div>
             <div class="footer-links">
                 <a href="#contact">Contact & Support</a>
+                <a href="https://buymeacoffee.com/sreejithj" target="_blank" rel="noopener noreferrer" class="footer-coffee-link">Buy Me a Coffee ☕</a>
                 <a href="https://www.linkedin.com/in/sreejithj/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://x.com/sreejithjayadev" target="_blank" rel="noopener noreferrer">X</a>
                 <a href="https://sreejith-j.github.io/ultra_privacy_policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
