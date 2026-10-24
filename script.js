@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewsContainer = document.getElementById('reviewsContainer');
     if (reviewsContainer) {
         const allReviews = [
-            { name: "Wayne Miller", text: "Just awesome. Easy way to remind me of things based on time, location, etc" },
+            { name: "Wayne Miller", text: "Edit, this thing just keeps getting better and better. Definitely an app worth paying a couple dollars for. The AI input is just spectacular. Just awesome. Easy way to remind me of things based on time, location, etc" },
             { name: "乃ㄥ丨几ᗪ乃卂ㄒ", text: "awesome app. I've been searching for one like this for a long time." },
             { name: "Wahid Hussain", text: "Currently, when the checkmark is clicked, the task is marked as completed immediately. Could you add a confirmation dialog before completing the task or an Undo option after completion would also be helpful. Thanks." },
             { name: "Ankit Sharma", text: "The only thing I don't like is the occasional Toast notification for Geofence other than that it works like a charm. I downloaded this for location reminders, I added some and then forgot about them and then months later I was pleasantly surprised to see it pop up right before I arrived at the specified location." },
@@ -214,7 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: "Syam Vijaya Krishnan", text: "Awesome!" },
             { name: "XBEAST", text: "Amazing App" },
             { name: "Prasanna Hegde", text: "very good" },
-            { name: "Rohit Pokala", text: "Nice app" }
+            { name: "Rohit Pokala", text: "Nice app" },
+            { name: "Manoj Kumar Nayak", text: "super app" },
+            { name: "Kwabena Amankwah", text: "I find this reminder app very useful. It would be great to have an early reminder feature added in future updates." }
         ];
 
         // Shuffle array using Fisher-Yates
