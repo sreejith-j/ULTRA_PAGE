@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ULTRA is a private Android alarm and reminder app for time, location, activity, device, countdown, and routine-based triggers.">
+    <meta name="description" content="ULTRA is a private Android alarm and reminder app for time, location, Wi-Fi, Bluetooth, activity, device, countdown, and routine-based triggers.">
     <title>ULTRA | Private Android Alarms for Real-Life Triggers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZFKHHV78Z"></script>
@@ -66,7 +66,7 @@
         <div class="hero-content fade-in-up">
             <div class="badge">Private Android alarms. No account. No cloud sync.</div>
             <h1>Alarms for time, place, movement, and <span class="text-gradient">your phone.</span></h1>
-            <p><strong>ULTRA means Ultimate Reminders and Alarms.</strong> Create reminders from plain language, locations, walking or driving activity, battery level, charger events, countdowns, and chained routines. Everything personal stays on your device.</p>
+            <p><strong>ULTRA means Ultimate Reminders and Alarms.</strong> Create reminders from plain language, locations, Wi-Fi networks, Bluetooth devices, walking or driving activity, battery level, charger events, countdowns, and chained routines. Everything personal stays on your device.</p>
             <div class="cta-group">
                 <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" class="play-badge-link">
                     <img alt="Get it on Google Play" src="play_store_badge.svg" style="height: 56px;">
@@ -76,6 +76,7 @@
             <div class="hero-proof" aria-label="ULTRA highlights">
                 <span>Time</span>
                 <span>Location</span>
+                <span>Wi-Fi &amp; Bluetooth</span>
                 <span>Activity</span>
                 <span>Battery</span>
                 <span>Routines</span>
@@ -108,75 +109,57 @@
             </article>
 
             <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.15s;">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                        <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="3"></line>
+                    </svg>
+                </div>
+                <span class="card-kicker">Wi-Fi</span>
+                <h3>Network connect &amp; leave</h3>
+                <p>Fire alarms when connecting to or leaving your Home, Office, or Gym Wi-Fi. An instant, ultra-low power alternative to location geofences.</p>
+            </article>
+
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.2s;">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"></polyline>
+                    </svg>
+                </div>
+                <span class="card-kicker">Bluetooth</span>
+                <h3>Device pairing events</h3>
+                <p>Trigger reminders the moment you pair with your car's audio system, connect Bluetooth headphones, or disconnect accessories.</p>
+            </article>
+
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.25s;">
                 <div class="card-icon">&#128694;</div>
                 <span class="card-kicker">Activity</span>
                 <h3>Movement-based alarms</h3>
                 <p>Trigger after walking, running, cycling, driving, or staying still for a chosen duration. Tracking pauses when your context changes.</p>
             </article>
 
-            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.2s;">
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.3s;">
                 <div class="card-icon">&#128267;</div>
                 <span class="card-kicker">Device</span>
                 <h3>Battery and charger events</h3>
                 <p>Fire alarms when battery reaches a high or low threshold, temperature rises, or the charger connects or disconnects.</p>
             </article>
 
-            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.25s;">
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.35s;">
                 <div class="card-icon">&#8987;</div>
                 <span class="card-kicker">Countdown</span>
                 <h3>Fast timers</h3>
                 <p>Start short countdowns for naps, cooking, work blocks, medication gaps, or any task where a quick timer is easier than a schedule.</p>
             </article>
 
-            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.3s;">
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.4s;">
                 <div class="card-icon">&#128279;</div>
                 <span class="card-kicker">Routine</span>
                 <h3>Chained reminders</h3>
                 <p>Build sequences where the next reminder starts after the previous one finishes, perfect for Pomodoro, care routines, and workflows.</p>
             </article>
-        </div>
-
-        <!-- Upcoming Beta Feature Teaser -->
-        <div class="upcoming-beta-banner fade-in-up" style="transition-delay: 0.15s;">
-            <div class="upcoming-beta-header">
-                <div class="badge upcoming-beta-badge">
-                    <span class="pulse-dot"></span> Next Beta Track &bull; Coming Soon
-                </div>
-                <h3>Wi-Fi &amp; Bluetooth Triggers are in development</h3>
-                <p>Enjoy context-aware reminders based on the wireless networks and devices you interact with every day — with zero GPS battery drain.</p>
-            </div>
-
-            <div class="upcoming-preview-grid">
-                <div class="upcoming-preview-card">
-                    <div class="upcoming-card-icon">&#128246;</div>
-                    <div class="upcoming-card-content">
-                        <h4>Wi-Fi Triggers</h4>
-                        <p>Fire alarms when connecting to or leaving your Home, Office, or Gym Wi-Fi. An instant, ultra-low power alternative to location geofences.</p>
-                        <span class="upcoming-card-tag">SSID Connect &bull; Disconnect</span>
-                    </div>
-                </div>
-
-                <div class="upcoming-preview-card">
-                    <div class="upcoming-card-icon">&#128266;</div>
-                    <div class="upcoming-card-content">
-                        <h4>Bluetooth Triggers</h4>
-                        <p>Trigger reminders when pairing with your car's audio system, connecting Bluetooth headphones, or unpairing accessories.</p>
-                        <span class="upcoming-card-tag">Device Pair &bull; Unpair</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="upcoming-beta-footer">
-                <div class="upcoming-beta-cta">
-                    <span>Want early access? Test them first on our open Google Play beta track:</span>
-                    <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn-beta-track">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
-                            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.924V2.738a2.38 2.38 0 0 1 .609-.924zm11.242 11.245l2.457-2.457a1.002 1.002 0 0 0 0-1.204l-2.457-2.457-7.893 7.893 7.893-1.775zm-1.059-8.95L4.85 1.096a1.996 1.996 0 0 1 1.704-.158l7.238 3.171zm0 15.782l-7.238 3.171a1.996 1.996 0 0 1-1.704-.158l8.942-3.013z"/>
-                        </svg>
-                        Join Beta on Google Play &rarr;
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -196,6 +179,8 @@
                 <h3>Examples ULTRA understands</h3>
                 <button type="button" class="example-chip" data-example="wake me up in 8 hours">wake me up in 8 hours</button>
                 <button type="button" class="example-chip" data-example="remind me to buy milk when I reach home">buy milk when I reach home</button>
+                <button type="button" class="example-chip" data-example="remind me to clock in when connected to Office Wi-Fi">Office Wi-Fi connected</button>
+                <button type="button" class="example-chip" data-example="start navigation when connected to car Bluetooth">car Bluetooth connected</button>
                 <button type="button" class="example-chip" data-example="after 30 minutes walking remind me to stretch">after 30 minutes walking</button>
                 <button type="button" class="example-chip" data-example="remind me when battery is 20%">battery is 20%</button>
                 <button type="button" class="example-chip" data-example="pay rent next Friday">pay rent next Friday</button>
@@ -235,6 +220,11 @@
                 <h3>Remember what you study, not just when to study.</h3>
                 <p>Add topics as flashcards and review them on a science-backed spaced repetition schedule. Rate each recall and ULTRA's SM-2 engine adjusts the next review automatically.</p>
             </article>
+            <article class="use-case fade-in-up" style="transition-delay: 0.4s;">
+                <span class="case-label">Wireless</span>
+                <h3>Automate with your networks &amp; car.</h3>
+                <p>Start your workday routines when your Office Wi-Fi connects, and cue your playlist or commute checklist the instant you pair with car Bluetooth.</p>
+            </article>
         </div>
     </section>
 
@@ -249,7 +239,7 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <h4>1. Pick a trigger</h4>
-                    <p>Create a reminder manually, from a template, or through Smart Input. Choose time, place, activity, device, countdown, or routine logic.</p>
+                    <p>Create a reminder manually, from a template, or through Smart Input. Choose time, place, Wi-Fi, Bluetooth, activity, device, countdown, or routine logic.</p>
                 </div>
             </div>
             <div class="timeline-item fade-in-up" style="transition-delay: 0.1s;">
@@ -512,9 +502,6 @@
                 <div class="note-icon">&#128161;</div>
                 <div class="note-text">
                     <strong>Smart Input Note:</strong> All reminders, alarms, foreground tracking, notifications, and home widgets are 100% localized in your native language. Natural language Smart Input currently parses English sentences.
-                    <div style="margin-top: 0.5rem; font-size: 0.88rem; color: #c4b5fd;">
-                        <strong>Upcoming Beta Track:</strong> Wi-Fi &amp; Bluetooth triggers are currently in active development. You can join the open beta on Google Play to test them first!
-                    </div>
                 </div>
             </div>
         </div>
@@ -776,11 +763,11 @@
             </div>
             <div class="faq-item">
                 <button class="faq-question">
-                    What triggers are coming next in Beta?
+                    How do Wi-Fi and Bluetooth triggers work?
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>We are actively developing Wi-Fi and Bluetooth triggers for our next Google Play beta release! You'll be able to fire alarms when connecting to or disconnecting from specific Wi-Fi networks (e.g. Home or Office) or Bluetooth devices (e.g. Car Audio or headphones). You can join our open Google Play beta track directly from the store listing to test these upcoming triggers before general release.</p>
+                    <p>Wi-Fi and Bluetooth triggers let you fire alarms and reminders based on your wireless connections with zero GPS battery drain. You can set alarms to trigger automatically when connecting to or disconnecting from specific Wi-Fi networks (such as your Home, Office, or Gym) or Bluetooth devices (such as your car's audio system, headphones, or smartwatch).</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -888,7 +875,7 @@
         <div class="download-container fade-in-up">
             <span class="download-kicker">Private. Flexible. Built for Android.</span>
             <h2>Ready for reminders that match real life?</h2>
-            <p>Download ULTRA and create alarms from time, place, movement, device state, routines, and plain language.</p>
+            <p>Download ULTRA and create alarms from time, place, Wi-Fi, Bluetooth, movement, device state, routines, and plain language.</p>
             <div class="download-buttons">
                 <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" class="play-badge-link">
                     <img alt="Get it on Google Play" src="play_store_badge.svg" style="height: 64px;">
@@ -913,6 +900,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHsu0021+sXQ16sA1Vts2R+k0G7j6tH8D5V2zJtD5Dk9o/FqL9X0+5/A+x6fKbxQhVz8c7Tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=10"></script>
 </body>
 </html>

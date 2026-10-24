@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const arriveMatch = text.match(/(?:when|while)\s+(?:i\s+)?(?:am\s+|'m\s+)?(?:arrive|arriving|get|getting|reach|reaching)\s+(?:(?:at|to)\s+)?(.+?)(?:\s+remind|\s*$)/i);
         const leaveMatch = text.match(/(?:when|while)\s+(?:i\s+)?(?:am\s+|'m\s+)?(?:leave|leaving|depart|departing|exit|exiting)\s+(?:(?:from)\s+)?(.+?)(?:\s+remind|\s*$)/i);
+        const wifiMatch = text.match(/(?:(?:when|while)\s+)?(?:connected to|connecting to|disconnect from|disconnecting from|leaves?|leaving)\s+([a-z0-9_\-]+)\s*(?:wi-fi|wifi)/i) || text.match(/([a-z0-9_\-]+)\s*(?:wi-fi|wifi)/i);
+        const bluetoothMatch = text.match(/(?:(?:when|while)\s+)?(?:connected to|connecting to|disconnect from|disconnecting from|paired with|pairs? with)\s+([a-z0-9_\-]+)\s*(?:bluetooth|bt)/i) || text.match(/([a-z0-9_\-]+)\s*(?:bluetooth|bt)/i);
         const batteryMatch = text.match(/battery\s+(?:is|at|hits|reaches|drops to|below)?\s*(\d{1,3})\s*%?/i);
         const chargerMatch = text.match(/charger\s+(connected|disconnected)|(?:plugged|unplugged)\s+(?:in|out)?/i);
         const durationActivityMatch = text.match(/(?:after|for)\s+(\d+)\s*(minutes?|mins?|hours?|hrs?)\s+(walking|walk|running|run|cycling|driving|drive|still|stationary)/i);
@@ -80,6 +82,22 @@ document.addEventListener('DOMContentLoaded', () => {
             parsed.push({ className: 'tag-location', label: 'Location', value: leaveMatch[1] });
             parsed.push({ className: 'tag-transition', label: 'Action', value: 'Leave' });
             task = task.substring(0, leaveMatch.index).trim();
+        }
+
+        if (wifiMatch) {
+            const isDisconnect = text.includes('disconnect') || text.includes('leave');
+            parsed.push({ className: 'tag-wifi', label: 'Wi-Fi', value: `${wifiMatch[1]} Wi-Fi` });
+            parsed.push({ className: 'tag-transition', label: 'Action', value: isDisconnect ? 'Disconnect' : 'Connect' });
+            if (wifiMatch.index > 0) {
+                task = task.substring(0, wifiMatch.index).trim();
+            }
+        } else if (bluetoothMatch) {
+            const isDisconnect = text.includes('disconnect') || text.includes('unpair');
+            parsed.push({ className: 'tag-bluetooth', label: 'Bluetooth', value: `${bluetoothMatch[1]} Bluetooth` });
+            parsed.push({ className: 'tag-transition', label: 'Action', value: isDisconnect ? 'Disconnect' : 'Pair' });
+            if (bluetoothMatch.index > 0) {
+                task = task.substring(0, bluetoothMatch.index).trim();
+            }
         }
 
         if (batteryMatch) {
