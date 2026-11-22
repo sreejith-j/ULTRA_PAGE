@@ -26,6 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
+    // Dynamic mouse tracking for card cyber-glow effects
+    const handleOnMouseMove = e => {
+        const { currentTarget: target } = e;
+        const rect = target.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+        target.style.setProperty("--mouse-x", `${x}px`);
+        target.style.setProperty("--mouse-y", `${y}px`);
+    };
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -65,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const arriveMatch = text.match(/(?:when|while)\s+(?:i\s+)?(?:am\s+|'m\s+)?(?:arrive|arriving|get|getting|reach|reaching)\s+(?:(?:at|to)\s+)?(.+?)(?:\s+remind|\s*$)/i);
         const leaveMatch = text.match(/(?:when|while)\s+(?:i\s+)?(?:am\s+|'m\s+)?(?:leave|leaving|depart|departing|exit|exiting)\s+(?:(?:from)\s+)?(.+?)(?:\s+remind|\s*$)/i);
-        const wifiMatch = text.match(/(?:(?:when|while)\s+)?(?:connected to|connecting to|disconnect from|disconnecting from|leaves?|leaving)\s+([a-z0-9_\-]+)\s*(?:wi-fi|wifi)/i) || text.match(/([a-z0-9_\-]+)\s*(?:wi-fi|wifi)/i);
-        const bluetoothMatch = text.match(/(?:(?:when|while)\s+)?(?:connected to|connecting to|disconnect from|disconnecting from|paired with|pairs? with)\s+([a-z0-9_\-]+)\s*(?:bluetooth|bt)/i) || text.match(/([a-z0-9_\-]+)\s*(?:bluetooth|bt)/i);
         const batteryMatch = text.match(/battery\s+(?:is|at|hits|reaches|drops to|below)?\s*(\d{1,3})\s*%?/i);
         const chargerMatch = text.match(/charger\s+(connected|disconnected)|(?:plugged|unplugged)\s+(?:in|out)?/i);
         const durationActivityMatch = text.match(/(?:after|for)\s+(\d+)\s*(minutes?|mins?|hours?|hrs?)\s+(walking|walk|running|run|cycling|driving|drive|still|stationary)/i);
@@ -82,22 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
             parsed.push({ className: 'tag-location', label: 'Location', value: leaveMatch[1] });
             parsed.push({ className: 'tag-transition', label: 'Action', value: 'Leave' });
             task = task.substring(0, leaveMatch.index).trim();
-        }
-
-        if (wifiMatch) {
-            const isDisconnect = text.includes('disconnect') || text.includes('leave');
-            parsed.push({ className: 'tag-wifi', label: 'Wi-Fi', value: `${wifiMatch[1]} Wi-Fi` });
-            parsed.push({ className: 'tag-transition', label: 'Action', value: isDisconnect ? 'Disconnect' : 'Connect' });
-            if (wifiMatch.index > 0) {
-                task = task.substring(0, wifiMatch.index).trim();
-            }
-        } else if (bluetoothMatch) {
-            const isDisconnect = text.includes('disconnect') || text.includes('unpair');
-            parsed.push({ className: 'tag-bluetooth', label: 'Bluetooth', value: `${bluetoothMatch[1]} Bluetooth` });
-            parsed.push({ className: 'tag-transition', label: 'Action', value: isDisconnect ? 'Disconnect' : 'Pair' });
-            if (bluetoothMatch.index > 0) {
-                task = task.substring(0, bluetoothMatch.index).trim();
-            }
         }
 
         if (batteryMatch) {
@@ -241,6 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>"${review.text}"</p>
                 <span class="reviewer-name">- ${review.name}</span>
             `;
+            article.addEventListener('mousemove', handleOnMouseMove);
             reviewsContainer.appendChild(article);
             
             // Add to IntersectionObserver to animate on scroll
@@ -471,18 +465,264 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mouse tracking for trigger cards, contact cards, and language cards (Cyber glow effect)
-    const handleOnMouseMove = e => {
-        const { currentTarget: target } = e;
-        const rect = target.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top;
-
-        target.style.setProperty("--mouse-x", `${x}px`);
-        target.style.setProperty("--mouse-y", `${y}px`);
+    // ==========================================================================
+    // 1-Tap Voice Quick Capture Interactive Simulator
+    // ==========================================================================
+    const voiceScenarios = {
+        location: {
+            text: "Remind me to buy groceries when I arrive home",
+            tags: [
+                { label: "Location", value: "Home", className: "tag-location" },
+                { label: "Action", value: "Arrive Geofence", className: "tag-transition" },
+                { label: "Task", value: "Buy groceries", className: "tag-task" }
+            ]
+        },
+        bluetooth: {
+            text: "Remind me to check tire pressure when connected to Car Bluetooth",
+            tags: [
+                { label: "Device", value: "Car Bluetooth (Audio)", className: "tag-device" },
+                { label: "Trigger", value: "Pairing Connect", className: "tag-transition" },
+                { label: "Task", value: "Check tire pressure", className: "tag-task" }
+            ]
+        },
+        time: {
+            text: "Tomorrow at 8:30 AM wake me up for standup",
+            tags: [
+                { label: "Date", value: "Tomorrow", className: "tag-time" },
+                { label: "Time", value: "08:30 AM", className: "tag-time" },
+                { label: "Task", value: "Standup", className: "tag-task" }
+            ]
+        },
+        activity: {
+            text: "Remind me to hydrate after 30 minutes of walking",
+            tags: [
+                { label: "Activity", value: "Walking (30 mins)", className: "tag-activity" },
+                { label: "Task", value: "Hydrate", className: "tag-task" }
+            ]
+        },
+        habit: {
+            text: "Take vitamins daily at 9 PM",
+            tags: [
+                { label: "Schedule", value: "Daily at 21:00", className: "tag-time" },
+                { label: "Routine", value: "Repeating Habit", className: "tag-transition" },
+                { label: "Task", value: "Take vitamins", className: "tag-task" }
+            ]
+        }
     };
 
-    for(const card of document.querySelectorAll(".trigger-card, .contact-card, .lang-card")) {
+    const voiceMicBtn = document.getElementById('voiceMicBtn');
+    const voiceStatusPill = document.getElementById('voiceStatusPill');
+    const voiceStatusLabel = document.getElementById('voiceStatusLabel');
+    const voiceTranscriptText = document.getElementById('voiceTranscriptText');
+    const voiceTagsContainer = document.getElementById('voiceTagsContainer');
+    const voiceCountdownLabel = document.getElementById('voiceCountdownLabel');
+    const voiceProgressBar = document.getElementById('voiceProgressBar');
+    const btnVoiceCancel = document.getElementById('btnVoiceCancel');
+    const btnVoiceSaveNow = document.getElementById('btnVoiceSaveNow');
+    const btnVoiceReplay = document.getElementById('btnVoiceReplay');
+    const voiceChips = document.querySelectorAll('.voice-chip');
+    const voiceExampleCards = document.querySelectorAll('.voice-example-card');
+    const audioWaveBars = document.getElementById('audioWaveBars');
+
+    let currentVoiceScenario = 'location';
+    let voiceCountdownInterval = null;
+    let voiceProgressTimeout = null;
+
+    const stopVoiceTimers = () => {
+        if (voiceCountdownInterval) {
+            clearInterval(voiceCountdownInterval);
+            voiceCountdownInterval = null;
+        }
+        if (voiceProgressTimeout) {
+            clearTimeout(voiceProgressTimeout);
+            voiceProgressTimeout = null;
+        }
+    };
+
+    const completeVoiceSave = () => {
+        stopVoiceTimers();
+        if (voiceProgressBar) {
+            voiceProgressBar.style.width = '100%';
+            voiceProgressBar.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+        }
+        if (voiceCountdownLabel) {
+            voiceCountdownLabel.textContent = '✓ Saved to Reminders!';
+            voiceCountdownLabel.style.color = '#34d399';
+        }
+        if (voiceStatusPill && voiceStatusLabel) {
+            voiceStatusPill.className = 'voice-status-pill status-saved';
+            voiceStatusLabel.textContent = 'Saved!';
+        }
+        if (btnVoiceSaveNow) btnVoiceSaveNow.style.display = 'none';
+        if (btnVoiceCancel) btnVoiceCancel.style.display = 'none';
+        if (btnVoiceReplay) btnVoiceReplay.style.display = 'inline-block';
+    };
+
+    const cancelVoiceSave = () => {
+        stopVoiceTimers();
+        if (voiceProgressBar) {
+            voiceProgressBar.style.background = 'rgba(239, 68, 68, 0.6)';
+        }
+        if (voiceCountdownLabel) {
+            voiceCountdownLabel.textContent = 'Auto-save paused';
+            voiceCountdownLabel.style.color = '#f87171';
+        }
+        if (voiceStatusPill && voiceStatusLabel) {
+            voiceStatusPill.className = 'voice-status-pill';
+            voiceStatusLabel.textContent = 'Paused';
+        }
+        if (btnVoiceSaveNow) btnVoiceSaveNow.style.display = 'inline-block';
+        if (btnVoiceCancel) btnVoiceCancel.style.display = 'none';
+        if (btnVoiceReplay) btnVoiceReplay.style.display = 'inline-block';
+    };
+
+    const runVoiceSimulation = (scenarioKey, scrollIntoView = false) => {
+        const scenario = voiceScenarios[scenarioKey];
+        if (!scenario) return;
+        currentVoiceScenario = scenarioKey;
+        stopVoiceTimers();
+
+        // Update active chip
+        voiceChips.forEach(chip => {
+            if (chip.dataset.scenario === scenarioKey) {
+                chip.classList.add('active');
+            } else {
+                chip.classList.remove('active');
+            }
+        });
+
+        // Reset action buttons visibility
+        if (btnVoiceSaveNow) btnVoiceSaveNow.style.display = 'inline-block';
+        if (btnVoiceCancel) btnVoiceCancel.style.display = 'inline-block';
+        if (btnVoiceReplay) btnVoiceReplay.style.display = 'none';
+
+        // Phase 1: Listening & Recording Simulation (600ms)
+        if (voiceMicBtn) voiceMicBtn.classList.add('recording');
+        if (voiceStatusPill && voiceStatusLabel) {
+            voiceStatusPill.className = 'voice-status-pill status-listening';
+            voiceStatusLabel.textContent = 'Listening...';
+        }
+        if (voiceProgressBar) {
+            voiceProgressBar.style.width = '0%';
+            voiceProgressBar.style.background = 'linear-gradient(90deg, #7c3aed, #34d399)';
+        }
+        if (voiceCountdownLabel) {
+            voiceCountdownLabel.textContent = 'Listening to speech...';
+            voiceCountdownLabel.style.color = '#c4b5fd';
+        }
+        if (voiceTranscriptText) {
+            voiceTranscriptText.style.opacity = '0.5';
+            voiceTranscriptText.innerHTML = '&ldquo;Listening...&rdquo;';
+        }
+        if (voiceTagsContainer) {
+            voiceTagsContainer.innerHTML = '<span class="placeholder" style="font-size:0.85rem; color:#a1a1aa;">Parsing speech triggers on-device...</span>';
+        }
+
+        if (scrollIntoView) {
+            const showcaseEl = document.querySelector('.voice-showcase-container');
+            if (showcaseEl) {
+                const rect = showcaseEl.getBoundingClientRect();
+                if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                    showcaseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        }
+
+        // Phase 2: Extracted & Begin 3-Second Auto-Save Countdown
+        voiceProgressTimeout = setTimeout(() => {
+            if (voiceMicBtn) voiceMicBtn.classList.remove('recording');
+            if (voiceStatusPill && voiceStatusLabel) {
+                voiceStatusPill.className = 'voice-status-pill status-extracted';
+                voiceStatusLabel.textContent = 'Extracted';
+            }
+            if (voiceTranscriptText) {
+                voiceTranscriptText.style.opacity = '1';
+                voiceTranscriptText.innerHTML = `&ldquo;${escapeHtml(scenario.text)}&rdquo;`;
+            }
+            if (voiceTagsContainer) {
+                voiceTagsContainer.innerHTML = scenario.tags
+                    .map(t => `<span class="tag ${t.className}">${escapeHtml(t.label)}: <strong>${escapeHtml(t.value)}</strong></span>`)
+                    .join('');
+            }
+
+            const startTime = Date.now();
+            const duration = 3000;
+
+            voiceCountdownInterval = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, (duration - elapsed) / 1000).toFixed(1);
+                const progressPct = Math.min(100, (elapsed / duration) * 100);
+
+                if (voiceProgressBar) {
+                    voiceProgressBar.style.width = `${progressPct}%`;
+                }
+                if (voiceCountdownLabel) {
+                    voiceCountdownLabel.textContent = `Auto-saving in ${remaining}s`;
+                    voiceCountdownLabel.style.color = '#34d399';
+                }
+
+                if (elapsed >= duration) {
+                    completeVoiceSave();
+                }
+            }, 50);
+        }, 550);
+    };
+
+    if (voiceMicBtn) {
+        voiceMicBtn.addEventListener('click', () => {
+            const scenarioKeys = Object.keys(voiceScenarios);
+            const currentIndex = scenarioKeys.indexOf(currentVoiceScenario);
+            const nextKey = scenarioKeys[(currentIndex + 1) % scenarioKeys.length];
+            runVoiceSimulation(nextKey);
+        });
+    }
+
+    voiceChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const scenario = chip.dataset.scenario;
+            if (scenario) runVoiceSimulation(scenario);
+        });
+    });
+
+    voiceExampleCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const scenario = card.dataset.scenario;
+            if (scenario) runVoiceSimulation(scenario, true);
+        });
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const scenario = card.dataset.scenario;
+                if (scenario) runVoiceSimulation(scenario, true);
+            }
+        });
+    });
+
+    if (btnVoiceCancel) btnVoiceCancel.addEventListener('click', cancelVoiceSave);
+    if (btnVoiceSaveNow) btnVoiceSaveNow.addEventListener('click', completeVoiceSave);
+    if (btnVoiceReplay) btnVoiceReplay.addEventListener('click', () => runVoiceSimulation(currentVoiceScenario));
+
+    // Initial subtle countdown setup on page load
+    if (voiceTagsContainer && voiceScenarios[currentVoiceScenario]) {
+        // Prepare initial state with tags populated
+        const initScenario = voiceScenarios[currentVoiceScenario];
+        voiceTagsContainer.innerHTML = initScenario.tags
+            .map(t => `<span class="tag ${t.className}">${escapeHtml(t.label)}: <strong>${escapeHtml(t.value)}</strong></span>`)
+            .join('');
+        if (voiceProgressBar) voiceProgressBar.style.width = '100%';
+        if (voiceCountdownLabel) voiceCountdownLabel.textContent = '✓ Ready to Capture';
+        if (voiceStatusPill && voiceStatusLabel) {
+            voiceStatusPill.className = 'voice-status-pill status-saved';
+            voiceStatusLabel.textContent = 'Ready';
+        }
+        if (btnVoiceReplay) btnVoiceReplay.style.display = 'inline-block';
+        if (btnVoiceSaveNow) btnVoiceSaveNow.style.display = 'none';
+        if (btnVoiceCancel) btnVoiceCancel.style.display = 'none';
+    }
+
+    // Attach cyber-glow mouse tracking across all cards
+    const interactiveCardsSelector = ".trigger-card, .contact-card, .lang-card, .voice-example-card, .use-case, .bento-card, .review-card, .upcoming-preview-card, .voice-step-card, .example-panel";
+    for (const card of document.querySelectorAll(interactiveCardsSelector)) {
         card.addEventListener("mousemove", handleOnMouseMove);
     }
 });

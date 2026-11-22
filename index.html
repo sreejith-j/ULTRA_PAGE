@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ULTRA is a private Android alarm and reminder app for time, location, Wi-Fi, Bluetooth, activity, device, countdown, and routine-based triggers.">
-    <title>ULTRA | Private Android Alarms for Real-Life Triggers</title>
+    <meta name="description" content="ULTRA is a private Android alarm and reminder app with 1-Tap Voice Quick Capture, time, location, activity, device, countdown, and routine-based triggers.">
+    <title>ULTRA | Private Android Alarms for Real-Life Triggers & Voice Quick Capture</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=12">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZFKHHV78Z"></script>
@@ -63,7 +63,7 @@
                 <a href="#features">Triggers</a>
                 <a href="#smart-input">Smart Input</a>
                 <a href="#use-cases">Use cases</a>
-                <a href="#languages">Languages <span class="nav-badge-live">Live</span></a>
+                <a href="#languages">Languages</a>
                 <a href="#featured">Featured</a>
                 <a href="#reviews">Reviews</a>
                 <a href="#contact">Contact</a>
@@ -90,7 +90,7 @@
         <div class="hero-content fade-in-up">
             <div class="badge">Private Android alarms. No account. No cloud sync.</div>
             <h1>Alarms for time, place, movement, and <span class="text-gradient">your phone.</span></h1>
-            <p><strong>ULTRA means Ultimate Reminders and Alarms.</strong> Create reminders from plain language, locations, Wi-Fi networks, Bluetooth devices, walking or driving activity, battery level, charger events, countdowns, and chained routines. Everything personal stays on your device.</p>
+            <p><strong>ULTRA means Ultimate Reminders and Alarms.</strong> Create reminders from your voice, plain language, locations, Wi-Fi networks, Bluetooth devices, walking or driving activity, battery level, charger events, countdowns, and chained routines. Everything personal stays on your device.</p>
             <div class="cta-group">
                 <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" class="play-badge-link">
                     <img alt="Get it on Google Play" src="play_store_badge.svg" style="height: 56px;">
@@ -104,6 +104,7 @@
                 <span>Activity</span>
                 <span>Battery</span>
                 <span>Routines</span>
+                <span class="hero-proof-voice">&#127897; Voice (Beta)</span>
             </div>
         </div>
         <div class="hero-image fade-in-up" style="transition-delay: 0.2s;">
@@ -133,57 +134,383 @@
             </article>
 
             <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.15s;">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                        <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                        <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="3"></line>
-                    </svg>
-                </div>
-                <span class="card-kicker">Wi-Fi</span>
-                <h3>Network connect &amp; leave</h3>
-                <p>Fire alarms when connecting to or leaving your Home, Office, or Gym Wi-Fi. An instant, ultra-low power alternative to location geofences.</p>
-            </article>
-
-            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.2s;">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <polyline points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"></polyline>
-                    </svg>
-                </div>
-                <span class="card-kicker">Bluetooth</span>
-                <h3>Device pairing events</h3>
-                <p>Trigger reminders the moment you pair with your car's audio system, connect Bluetooth headphones, or disconnect accessories.</p>
-            </article>
-
-            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.25s;">
                 <div class="card-icon">&#128694;</div>
                 <span class="card-kicker">Activity</span>
                 <h3>Movement-based alarms</h3>
                 <p>Trigger after walking, running, cycling, driving, or staying still for a chosen duration. Tracking pauses when your context changes.</p>
             </article>
 
-            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.3s;">
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.2s;">
                 <div class="card-icon">&#128267;</div>
                 <span class="card-kicker">Device</span>
                 <h3>Battery and charger events</h3>
                 <p>Fire alarms when battery reaches a high or low threshold, temperature rises, or the charger connects or disconnects.</p>
             </article>
 
-            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.35s;">
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.25s;">
                 <div class="card-icon">&#8987;</div>
                 <span class="card-kicker">Countdown</span>
                 <h3>Fast timers</h3>
                 <p>Start short countdowns for naps, cooking, work blocks, medication gaps, or any task where a quick timer is easier than a schedule.</p>
             </article>
 
-            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.4s;">
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.3s;">
                 <div class="card-icon">&#128279;</div>
                 <span class="card-kicker">Routine</span>
                 <h3>Chained reminders</h3>
                 <p>Build sequences where the next reminder starts after the previous one finishes, perfect for Pomodoro, care routines, and workflows.</p>
             </article>
+        </div>
+
+        <!-- Wireless Triggers Section (Wi-Fi & Bluetooth) -->
+        <div class="upcoming-beta-banner live-wireless-banner fade-in-up" style="transition-delay: 0.15s;">
+            <div class="upcoming-beta-header">
+                <div class="badge live-wireless-badge">
+                    Wireless Triggers
+                </div>
+                <h3>Wi-Fi &amp; Bluetooth Triggers</h3>
+                <p>Enjoy context-aware reminders based on the wireless networks and devices you interact with every day — with zero GPS battery drain.</p>
+            </div>
+
+            <div class="upcoming-preview-grid">
+                <div class="upcoming-preview-card live-card">
+                    <div class="upcoming-card-icon">&#128246;</div>
+                    <div class="upcoming-card-content">
+                        <h4>Wi-Fi Triggers</h4>
+                        <p>Fire alarms when connecting to or leaving your Home, Office, or Gym Wi-Fi. An instant, ultra-low power alternative to location geofences.</p>
+                        <span class="upcoming-card-tag live-tag">SSID Connect &bull; Disconnect</span>
+                    </div>
+                </div>
+
+                <div class="upcoming-preview-card live-card">
+                    <div class="upcoming-card-icon">&#128266;</div>
+                    <div class="upcoming-card-content">
+                        <h4>Bluetooth Triggers</h4>
+                        <p>Trigger reminders when pairing with your car's audio system, connecting Bluetooth headphones, or unpairing accessories.</p>
+                        <span class="upcoming-card-tag live-tag">Device Pair &bull; Unpair</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upcoming-beta-footer">
+                <div class="upcoming-beta-cta">
+                    <span>Set low-power context alarms for your wireless connections:</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn-live-track">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
+                            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.924V2.738a2.38 2.38 0 0 1 .609-.924zm11.242 11.245l2.457-2.457a1.002 1.002 0 0 0 0-1.204l-2.457-2.457-7.893 7.893 7.893-1.775zm-1.059-8.95L4.85 1.096a1.996 1.996 0 0 1 1.704-.158l7.238 3.171zm0 15.782l-7.238 3.171a1.996 1.996 0 0 1-1.704-.158l8.942-3.013z"/>
+                        </svg>
+                        Get ULTRA on Google Play &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Flagship Feature: 1-Tap Voice Quick Capture (Beta)
+         ========================================================================== -->
+    <section id="voice-capture" class="voice-section section">
+        <div class="section-header fade-in-up">
+            <div class="badge voice-pill-badge">
+                <span class="pulse-dot"></span> New Flagship Beta &bull; 1-Tap Voice Quick Capture
+            </div>
+            <h2>Speak your alarms into existence. <span class="text-gradient">Zero typing. 3 seconds.</span></h2>
+            <p>Tap the mic or long-press the home screen icon. Speak naturally in plain language — ULTRA's on-device NLU engine extracts schedules, locations, car Bluetooth, and habits, then auto-saves hands-free with 100% on-device privacy.</p>
+            <div class="voice-header-ctas">
+                <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.924V2.738a2.38 2.38 0 0 1 .609-.924zm11.242 11.245l2.457-2.457a1.002 1.002 0 0 0 0-1.204l-2.457-2.457-7.893 7.893 7.893-1.775zm-1.059-8.95L4.85 1.096a1.996 1.996 0 0 1 1.704-.158l7.238 3.171zm0 15.782l-7.238 3.171a1.996 1.996 0 0 1-1.704-.158l8.942-3.013z"/>
+                    </svg>
+                    Try Voice Capture on Google Play
+                </a>
+                <a href="#voice-commands" class="btn-secondary">Explore Voice Commands &darr;</a>
+            </div>
+        </div>
+
+        <!-- Interactive Voice Capture Simulator -->
+        <div class="voice-showcase-container fade-in-up">
+            <div class="voice-simulator-grid">
+                <!-- Left Control Panel: Microphone Trigger & Interactive Scenario Chips -->
+                <div class="voice-controls-panel">
+                    <div class="voice-mic-hero-wrap">
+                        <button type="button" class="voice-mic-btn" id="voiceMicBtn" aria-label="Simulate Voice Capture" title="Click to simulate voice recording">
+                            <span class="mic-wave-ring wave-1"></span>
+                            <span class="mic-wave-ring wave-2"></span>
+                            <span class="mic-wave-ring wave-3"></span>
+                            <svg class="mic-icon-svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="22"></line>
+                            </svg>
+                        </button>
+                        <div class="voice-mic-copy">
+                            <span class="voice-mic-kicker">Interactive Live Simulator</span>
+                            <h4>Tap the Mic or a Command Below</h4>
+                            <p>Experience how ULTRA transcribes speech, extracts triggers, and triggers the 3-second auto-save.</p>
+                        </div>
+                    </div>
+
+                    <div class="voice-chips-group">
+                        <span class="voice-chips-label">Try real voice commands:</span>
+                        <div class="voice-chips-list">
+                            <button type="button" class="voice-chip active" data-scenario="location">
+                                <span class="chip-icon">&#128205;</span>
+                                <span class="chip-text">"Remind me to buy groceries when I arrive home"</span>
+                                <span class="chip-badge">Geofence</span>
+                            </button>
+                            <button type="button" class="voice-chip" data-scenario="bluetooth">
+                                <span class="chip-icon">&#128663;</span>
+                                <span class="chip-text">"Check tire pressure when connected to Car Bluetooth"</span>
+                                <span class="chip-badge">Bluetooth</span>
+                            </button>
+                            <button type="button" class="voice-chip" data-scenario="time">
+                                <span class="chip-icon">&#9200;</span>
+                                <span class="chip-text">"Tomorrow at 8:30 AM wake me up for standup"</span>
+                                <span class="chip-badge">Time</span>
+                            </button>
+                            <button type="button" class="voice-chip" data-scenario="activity">
+                                <span class="chip-icon">&#128694;</span>
+                                <span class="chip-text">"Remind me to hydrate after 30 minutes of walking"</span>
+                                <span class="chip-badge">Activity</span>
+                            </button>
+                            <button type="button" class="voice-chip" data-scenario="habit">
+                                <span class="chip-icon">&#128138;</span>
+                                <span class="chip-text">"Take vitamins daily at 9 PM"</span>
+                                <span class="chip-badge">Habit</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="voice-multilingual-badge">
+                        <span class="globe-icon">&#128483;</span>
+                        <span>Voice Quick Capture works with English</span>
+                    </div>
+                </div>
+
+                <!-- Right Preview: Simulated Material 3 Phone Confirmation Card -->
+                <div class="voice-phone-preview-wrap">
+                    <div class="voice-material-card" id="voiceSimCard">
+                        <!-- Top Bar Status -->
+                        <div class="voice-card-topbar">
+                            <div class="voice-card-brand">
+                                <span class="brand-dot"></span>
+                                <span class="brand-text">ULTRA &bull; QUICK CAPTURE</span>
+                            </div>
+                            <div class="voice-status-pill status-listening" id="voiceStatusPill">
+                                <span class="status-indicator-dot"></span>
+                                <span id="voiceStatusLabel">Listening...</span>
+                            </div>
+                        </div>
+
+                        <!-- Spoken Voice Transcript Bubble -->
+                        <div class="voice-transcript-box">
+                            <div class="voice-transcript-header">
+                                <div class="audio-waveform-bars" id="audioWaveBars" aria-hidden="true">
+                                    <span class="bar bar-1"></span>
+                                    <span class="bar bar-2"></span>
+                                    <span class="bar bar-3"></span>
+                                    <span class="bar bar-4"></span>
+                                    <span class="bar bar-5"></span>
+                                </div>
+                                <span class="voice-lang-pill">Native Android Speech &bull; On-Device</span>
+                            </div>
+                            <blockquote class="voice-transcript-text" id="voiceTranscriptText">
+                                &ldquo;Remind me to buy groceries when I arrive home&rdquo;
+                            </blockquote>
+                        </div>
+
+                        <!-- Extracted Triggers & Task Block -->
+                        <div class="voice-extracted-block">
+                            <span class="voice-extracted-label">NLU Engine Extracted Triggers</span>
+                            <div class="voice-tags-wrap" id="voiceTagsContainer">
+                                <span class="tag tag-location">Location: <strong>Home</strong></span>
+                                <span class="tag tag-transition">Action: <strong>Arrive Geofence</strong></span>
+                                <span class="tag tag-task">Task: <strong>Buy groceries</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- 3-Second Frictionless Auto-Save Countdown Bar -->
+                        <div class="voice-autosave-block">
+                            <div class="voice-autosave-header">
+                                <span class="autosave-title">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color: #34d399;">
+                                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                                    </svg>
+                                    Frictionless Auto-Save
+                                </span>
+                                <span class="autosave-counter" id="voiceCountdownLabel">Auto-saving in 3.0s</span>
+                            </div>
+                            <div class="autosave-progress-track">
+                                <div class="autosave-progress-bar" id="voiceProgressBar"></div>
+                            </div>
+                            <div class="voice-card-actions">
+                                <button type="button" class="btn-voice-action action-cancel" id="btnVoiceCancel">Cancel</button>
+                                <button type="button" class="btn-voice-action action-save" id="btnVoiceSaveNow">Save Now</button>
+                                <button type="button" class="btn-voice-action action-replay" id="btnVoiceReplay">&#8635; Replay</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-tap-hint">Tap any command chip or showcase card to test live simulation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 Flagship Feature Benefit Cards -->
+        <div class="voice-benefits-grid">
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12">
+                <div class="card-icon">&#127897;</div>
+                <span class="card-kicker">Instant Access</span>
+                <h3>Zero-Friction 1-Tap Capture</h3>
+                <p>Tap the microphone in the top app bar or long-press the Ultra icon on your Android home screen via App Shortcuts. Capture thoughts the split second they cross your mind — zero keystrokes required.</p>
+            </article>
+
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.08s;">
+                <div class="card-icon">&#129504;</div>
+                <span class="card-kicker">On-Device NLU</span>
+                <h3>Multi-Trigger Context Parsing</h3>
+                <p>Ultra doesn't just transcribe speech — it parses real intents. Seamlessly extracts schedules, geofences, Wi-Fi networks, car Bluetooth pairings, walking durations, and repeating habits all in one sentence.</p>
+            </article>
+
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.16s;">
+                <div class="card-icon">&#9889;</div>
+                <span class="card-kicker">3-Second Auto-Save</span>
+                <h3>Hands-Free Flow</h3>
+                <p>Review the recognized triggers on a clean Material 3 card. A visual 3-second countdown automatically confirms and locks in your alarm. Tap to edit or cancel, or simply put your phone away — it saves itself.</p>
+            </article>
+
+            <article class="trigger-card fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.24s;">
+                <div class="card-icon">&#128737;</div>
+                <span class="card-kicker">100% On-Device</span>
+                <h3>Privacy-First Architecture</h3>
+                <p>Powered exclusively by Android's native system speech engine. Zero audio recordings or transcripts are ever uploaded to cloud servers or third-party AI endpoints. What you say stays exclusively on your phone.</p>
+            </article>
+        </div>
+
+        <!-- How It Works (3 Simple Steps) -->
+        <div class="voice-steps-wrap fade-in-up">
+            <div class="voice-steps-header">
+                <span class="voice-kicker">Simple 3-Step Flow</span>
+                <h3>From spoken thought to set alarm in 3 seconds.</h3>
+            </div>
+            <div class="voice-steps-grid">
+                <div class="voice-step-card">
+                    <div class="voice-step-number">01</div>
+                    <div class="voice-step-content">
+                        <h4>Tap to Listen</h4>
+                        <p>Hit the mic in the top app bar or trigger it instantly from your home screen with the Android App Shortcut.</p>
+                    </div>
+                </div>
+                <div class="voice-step-card">
+                    <div class="voice-step-number">02</div>
+                    <div class="voice-step-content">
+                        <h4>Speak Naturally</h4>
+                        <p>Talk in plain language without stiff commands. ULTRA listens and extracts triggers from natural English speech.</p>
+                    </div>
+                </div>
+                <div class="voice-step-card">
+                    <div class="voice-step-number">03</div>
+                    <div class="voice-step-content">
+                        <h4>Done in 3 Seconds</h4>
+                        <p>Ultra extracts every trigger, previews the result, and auto-saves hands-free before you can even put your phone in your pocket.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- "What You Can Say" Showcase Grid -->
+        <div id="voice-commands" class="voice-commands-showcase fade-in-up">
+            <div class="voice-commands-header">
+                <span class="voice-kicker">Voice Command Showcase</span>
+                <h3>What can you say to ULTRA?</h3>
+                <p>Ultra's contextual engine understands all your everyday conditions. Click any command to test in the simulator:</p>
+            </div>
+            <div class="voice-examples-grid">
+                <div class="voice-example-card" data-scenario="location" tabindex="0" role="button" aria-label="Test location voice command">
+                    <div class="example-card-top">
+                        <span class="example-icon">&#128205;</span>
+                        <span class="example-category">Location &bull; Geofencing</span>
+                        <span class="example-test-pill">Test &rarr;</span>
+                    </div>
+                    <h4 class="example-spoken">&ldquo;Remind me to buy groceries when I arrive home&rdquo;</h4>
+                    <p class="example-desc">Fires an alarm the moment you cross the geofence perimeter around your house.</p>
+                    <div class="example-tags">
+                        <span class="mini-tag tag-location">📍 Arrive Home</span>
+                        <span class="mini-tag tag-task">🛒 Buy groceries</span>
+                    </div>
+                </div>
+
+                <div class="voice-example-card" data-scenario="bluetooth" tabindex="0" role="button" aria-label="Test bluetooth voice command">
+                    <div class="example-card-top">
+                        <span class="example-icon">&#128663;</span>
+                        <span class="example-category">Hardware &bull; Bluetooth</span>
+                        <span class="example-test-pill">Test &rarr;</span>
+                    </div>
+                    <h4 class="example-spoken">&ldquo;Remind me to check tire pressure when connected to Car Bluetooth&rdquo;</h4>
+                    <p class="example-desc">Monitors system Bluetooth pairings and triggers instantly when entering your vehicle.</p>
+                    <div class="example-tags">
+                        <span class="mini-tag tag-device">🚗 Car Bluetooth</span>
+                        <span class="mini-tag tag-task">🔧 Check tire pressure</span>
+                    </div>
+                </div>
+
+                <div class="voice-example-card" data-scenario="time" tabindex="0" role="button" aria-label="Test scheduled time voice command">
+                    <div class="example-card-top">
+                        <span class="example-icon">&#9200;</span>
+                        <span class="example-category">Schedules &bull; Exact Time</span>
+                        <span class="example-test-pill">Test &rarr;</span>
+                    </div>
+                    <h4 class="example-spoken">&ldquo;Tomorrow at 8:30 AM wake me up for standup&rdquo;</h4>
+                    <p class="example-desc">Sets high-precision alarm with customizable smart snooze and challenge dismissal.</p>
+                    <div class="example-tags">
+                        <span class="mini-tag tag-time">⏰ Tomorrow, 8:30 AM</span>
+                        <span class="mini-tag tag-task">💼 Standup</span>
+                    </div>
+                </div>
+
+                <div class="voice-example-card" data-scenario="activity" tabindex="0" role="button" aria-label="Test activity voice command">
+                    <div class="example-card-top">
+                        <span class="example-icon">&#128694;</span>
+                        <span class="example-category">Movement &bull; Activity</span>
+                        <span class="example-test-pill">Test &rarr;</span>
+                    </div>
+                    <h4 class="example-spoken">&ldquo;Remind me to hydrate after 30 minutes of walking&rdquo;</h4>
+                    <p class="example-desc">Uses native Android Activity Recognition to measure continuous walking or running.</p>
+                    <div class="example-tags">
+                        <span class="mini-tag tag-activity">🏃 Walking: 30m</span>
+                        <span class="mini-tag tag-task">💧 Hydrate</span>
+                    </div>
+                </div>
+
+                <div class="voice-example-card" data-scenario="habit" tabindex="0" role="button" aria-label="Test habit voice command">
+                    <div class="example-card-top">
+                        <span class="example-icon">&#128138;</span>
+                        <span class="example-category">Habits &bull; Recurring Care</span>
+                        <span class="example-test-pill">Test &rarr;</span>
+                    </div>
+                    <h4 class="example-spoken">&ldquo;Take vitamins daily at 9 PM&rdquo;</h4>
+                    <p class="example-desc">Builds a recurring daily habit sequence with progress tracking and supply counts.</p>
+                    <div class="example-tags">
+                        <span class="mini-tag tag-time">🔁 Daily at 21:00</span>
+                        <span class="mini-tag tag-task">💊 Take vitamins</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy & Trust Callout Box -->
+        <div class="voice-privacy-box fade-in-up">
+            <div class="privacy-box-icon">&#128737;</div>
+            <div class="privacy-box-content">
+                <span class="privacy-kicker">Absolute Privacy Guarantee</span>
+                <h3>Your voice never touches the cloud.</h3>
+                <p>Unlike cloud voice assistants, ULTRA does not record, stream, or store your voice conversations on remote servers. We utilize Android's native system speech services coupled with our 100% on-device Natural Language Understanding engine. Your reminders, daily locations, schedule habits, and audio remain exclusively on your device.</p>
+                <div class="privacy-badges-row">
+                    <span class="p-badge">&#10003; 100% On-Device Processing</span>
+                    <span class="p-badge">&#10003; No Account or Cloud Login</span>
+                    <span class="p-badge">&#10003; Zero Audio File Uploads</span>
+                    <span class="p-badge">&#10003; Full Offline Capability</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -203,8 +530,6 @@
                 <h3>Examples ULTRA understands</h3>
                 <button type="button" class="example-chip" data-example="wake me up in 8 hours">wake me up in 8 hours</button>
                 <button type="button" class="example-chip" data-example="remind me to buy milk when I reach home">buy milk when I reach home</button>
-                <button type="button" class="example-chip" data-example="remind me to clock in when connected to Office Wi-Fi">Office Wi-Fi connected</button>
-                <button type="button" class="example-chip" data-example="start navigation when connected to car Bluetooth">car Bluetooth connected</button>
                 <button type="button" class="example-chip" data-example="after 30 minutes walking remind me to stretch">after 30 minutes walking</button>
                 <button type="button" class="example-chip" data-example="remind me when battery is 20%">battery is 20%</button>
                 <button type="button" class="example-chip" data-example="pay rent next Friday">pay rent next Friday</button>
@@ -219,35 +544,30 @@
             <p>ULTRA is strongest when a normal alarm is too simple for the job.</p>
         </div>
         <div class="use-case-grid">
-            <article class="use-case fade-in-up">
+            <article class="use-case fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12">
                 <span class="case-label">Errands</span>
                 <h3>Remember at the place, not just the time.</h3>
                 <p>Buy groceries when you reach the store, pick up medicine near the pharmacy, or get a nudge when leaving office.</p>
             </article>
-            <article class="use-case fade-in-up" style="transition-delay: 0.08s;">
+            <article class="use-case fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.08s;">
                 <span class="case-label">Travel</span>
                 <h3>Turn train details into alarms.</h3>
                 <p>Paste an IRCTC ticket message and let ULTRA extract train details and prepare departure reminders.</p>
             </article>
-            <article class="use-case fade-in-up" style="transition-delay: 0.16s;">
+            <article class="use-case fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.16s;">
                 <span class="case-label">Focus</span>
                 <h3>Run routines without rebuilding them.</h3>
                 <p>Use templates and chained reminders for Pomodoro sessions, morning rituals, study blocks, and daily structure.</p>
             </article>
-            <article class="use-case fade-in-up" style="transition-delay: 0.24s;">
+            <article class="use-case fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.24s;">
                 <span class="case-label">Care</span>
                 <h3>Support habits and supplies.</h3>
                 <p>Track stock, get low-supply alerts, schedule daily essentials, and review completion history over time.</p>
             </article>
-            <article class="use-case fade-in-up" style="transition-delay: 0.32s;">
+            <article class="use-case fade-in-up" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.12" style="transition-delay: 0.32s;">
                 <span class="case-label">Learning</span>
                 <h3>Remember what you study, not just when to study.</h3>
                 <p>Add topics as flashcards and review them on a science-backed spaced repetition schedule. Rate each recall and ULTRA's SM-2 engine adjusts the next review automatically.</p>
-            </article>
-            <article class="use-case fade-in-up" style="transition-delay: 0.4s;">
-                <span class="case-label">Wireless</span>
-                <h3>Automate with your networks &amp; car.</h3>
-                <p>Start your workday routines when your Office Wi-Fi connects, and cue your playlist or commute checklist the instant you pair with car Bluetooth.</p>
             </article>
         </div>
     </section>
@@ -263,7 +583,7 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <h4>1. Pick a trigger</h4>
-                    <p>Create a reminder manually, from a template, or through Smart Input. Choose time, place, Wi-Fi, Bluetooth, activity, device, countdown, or routine logic.</p>
+                    <p>Create a reminder manually, from a template, or through Smart Input. Choose time, place, activity, device, countdown, or routine logic.</p>
                 </div>
             </div>
             <div class="timeline-item fade-in-up" style="transition-delay: 0.1s;">
@@ -326,10 +646,10 @@
         <a id="beta-languages" style="position: absolute; visibility: hidden; pointer-events: none;"></a>
         <div class="section-header fade-in-up">
             <div class="badge beta-pill-badge">
-                <span class="pulse-dot"></span> Now in Production &bull; Multi-Language Support
+                Multi-Language Support
             </div>
             <h2>Use ULTRA in <span class="text-gradient">Your Language.</span></h2>
-            <p>ULTRA now speaks 8 languages natively in production. Experience private alarms, location geofences, routines, notifications, and home screen widgets completely in your native tongue.</p>
+            <p>ULTRA speaks 8 languages natively. Experience private alarms, location geofences, routines, notifications, and home screen widgets completely in your native tongue.</p>
         </div>
 
         <!-- Interactive Preview Box -->
@@ -511,7 +831,7 @@
             <div class="beta-cta-content">
                 <span class="beta-banner-tag">Available on Google Play</span>
                 <h3>Ready to use ULTRA in your language?</h3>
-                <p>All 8 supported languages are now officially live in production. Download ULTRA from Google Play and manage your alarms and reminders in your native tongue.</p>
+                <p>Download ULTRA from Google Play and manage your alarms and reminders in your native tongue across 8 supported languages.</p>
                 <div class="beta-cta-buttons">
                     <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn-primary">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="margin-right: 4px;">
@@ -526,6 +846,9 @@
                 <div class="note-icon">&#128161;</div>
                 <div class="note-text">
                     <strong>Smart Input Note:</strong> All reminders, alarms, foreground tracking, notifications, and home widgets are 100% localized in your native language. Natural language Smart Input currently parses English sentences.
+                    <div style="margin-top: 0.5rem; font-size: 0.88rem; color: #a1a1aa;">
+                        <strong>Wireless Triggers:</strong> Wi-Fi &amp; Bluetooth triggers let you fire context-aware alarms when connecting to or disconnecting from car Bluetooth or home/office Wi-Fi.
+                    </div>
                 </div>
             </div>
         </div>
@@ -686,33 +1009,33 @@
             <h2>Try our other applications</h2>
             <p>Explore more productivity tools by SreejithJ on Google Play.</p>
         </div>
-        <div class="bento-grid fade-in-up" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: 1.5rem;">
-            <a href="https://play.google.com/store/apps/details?id=com.mj.yaja&hl=en_IN" target="_blank" class="bento-card" style="display: flex; flex-direction: column; gap: 1rem;">
-                <h3 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 0.5rem;">Yaja</h3>
-                <p style="flex: 1; font-size: 0.95rem;">Check out this app on Google Play.</p>
-                <div class="stars">★★★★★</div>
+        <div class="other-apps-grid fade-in-up">
+            <a href="https://play.google.com/store/apps/details?id=com.mj.yaja&hl=en_IN" target="_blank" rel="noopener noreferrer" class="bento-card other-app-card">
+                <h3>Yaja</h3>
+                <p>Check out this app on Google Play.</p>
+                <div class="stars" aria-label="5 stars">★★★★★</div>
             </a>
-            <a href="https://play.google.com/store/apps/details?id=com.mj.randr&hl=en_IN" target="_blank" class="bento-card" style="display: flex; flex-direction: column; gap: 1rem;">
-                <h3 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 0.5rem;">R&R</h3>
-                <p style="flex: 1; font-size: 0.95rem;">Check out this app on Google Play.</p>
-                <div class="stars">★★★★★</div>
+            <a href="https://play.google.com/store/apps/details?id=com.mj.randr&hl=en_IN" target="_blank" rel="noopener noreferrer" class="bento-card other-app-card">
+                <h3>R&R</h3>
+                <p>Check out this app on Google Play.</p>
+                <div class="stars" aria-label="5 stars">★★★★★</div>
             </a>
-            <a href="https://play.google.com/store/apps/details?id=com.mj.assetrack&hl=en_IN" target="_blank" class="bento-card" style="display: flex; flex-direction: column; gap: 1rem;">
-                <h3 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 0.5rem;">Assetrack</h3>
-                <p style="flex: 1; font-size: 0.95rem;">Check out this app on Google Play.</p>
-                <div class="stars">★★★★★</div>
+            <a href="https://play.google.com/store/apps/details?id=com.mj.assetrack&hl=en_IN" target="_blank" rel="noopener noreferrer" class="bento-card other-app-card">
+                <h3>Assetrack</h3>
+                <p>Check out this app on Google Play.</p>
+                <div class="stars" aria-label="5 stars">★★★★★</div>
             </a>
         </div>
 
-        <a href="https://ranjithj.in/" target="_blank" rel="noopener noreferrer" class="bento-card fade-in-up" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; text-decoration: none; border-color: rgba(124, 58, 237, 0.35);">
-            <div style="flex: 1; min-width: 260px;">
-                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #a1a1aa; font-weight: 600;">Collaborator & Co-Creator</span>
-                <h3 style="color: var(--text-primary); font-size: 1.4rem; margin-top: 0.25rem;">Ranjith Jayadevan</h3>
-                <p style="font-size: 0.95rem; margin-top: 0.5rem; max-width: 650px;">Some of our published applications are collaborative builds! Check out more apps and creative independent engineering projects on my brother's portfolio.</p>
+        <a href="https://ranjithj.in/" target="_blank" rel="noopener noreferrer" class="bento-card collaborator-card fade-in-up">
+            <div class="collaborator-copy">
+                <span class="card-kicker">Collaborator & Co-Creator</span>
+                <h3>Ranjith Jayadevan</h3>
+                <p>Some of our published applications are collaborative builds! Check out more apps and creative independent engineering projects on my brother's portfolio.</p>
             </div>
-            <div style="background: black; padding: 0.8rem 1.5rem; border-radius: 6px; border: 1px solid #a6a6a6; font-weight: 500; color: #fff; white-space: nowrap; transition: var(--transition-smooth);">
+            <span class="btn-secondary">
                 Visit ranjithj.in &rarr;
-            </div>
+            </span>
         </a>
     </section>
 
@@ -787,11 +1110,20 @@
             </div>
             <div class="faq-item">
                 <button class="faq-question">
+                    How does 1-Tap Voice Quick Capture work, and is my voice recorded?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>No audio recordings or voice files are ever stored or sent to remote servers. ULTRA uses Android's native system speech recognizer and our 100% on-device Natural Language Understanding engine. You can tap the microphone in the top app bar or long-press the ULTRA icon on your home screen via App Shortcuts. ULTRA instantly extracts dates, locations, Bluetooth triggers, and recurring routines, showing a 3-second auto-save countdown preview that sets your alarm completely hands-free.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
                     How do Wi-Fi and Bluetooth triggers work?
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Wi-Fi and Bluetooth triggers let you fire alarms and reminders based on your wireless connections with zero GPS battery drain. You can set alarms to trigger automatically when connecting to or disconnecting from specific Wi-Fi networks (such as your Home, Office, or Gym) or Bluetooth devices (such as your car's audio system, headphones, or smartwatch).</p>
+                    <p>Wi-Fi and Bluetooth triggers allow you to fire alarms when connecting to or disconnecting from specific Wi-Fi networks (such as your Home, Office, or Gym) or Bluetooth accessories (such as your Car Audio, headphones, or wearables). Because these rely on device hardware events rather than continuous GPS polling, they offer an instant, ultra-low power alternative to location geofences with zero battery drain.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -866,30 +1198,8 @@
                 </div>
             </div>
 
-            <!-- Bug Reporting & Feedback Tips Card -->
-            <div class="contact-card info-card fade-in-up" style="transition-delay: 0.1s;">
-                <div class="contact-icon-wrap info-icon">
-                    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="16" x2="12" y2="12"></line>
-                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                </div>
-                <div class="contact-card-body">
-                    <span class="contact-tag">Tips &amp; Reviews</span>
-                    <h3>Reporting an Issue?</h3>
-                    <p>Sharing your Android version &amp; device model helps us investigate faster. You can also rate ULTRA on Google Play!</p>
-                    <div class="contact-mini-actions">
-                        <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="contact-play-btn">
-                            <span>Google Play Store</span>
-                            <span class="arrow">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
             <!-- LinkedIn Card -->
-            <a href="https://www.linkedin.com/in/sreejithj/" target="_blank" rel="noopener noreferrer" class="contact-card social-card fade-in-up" style="transition-delay: 0.15s;">
+            <a href="https://www.linkedin.com/in/sreejithj/" target="_blank" rel="noopener noreferrer" class="contact-card social-card fade-in-up" style="transition-delay: 0.12s;">
                 <div class="contact-icon-wrap linkedin-icon">
                     <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
                         <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3Z"></path>
@@ -907,14 +1217,14 @@
             </a>
 
             <!-- X (Twitter) Card -->
-            <a href="https://x.com/sreejithjayadev" target="_blank" rel="noopener noreferrer" class="contact-card social-card fade-in-up" style="transition-delay: 0.2s;">
+            <a href="https://x.com/sreejithjayadev" target="_blank" rel="noopener noreferrer" class="contact-card social-card fade-in-up" style="transition-delay: 0.18s;">
                 <div class="contact-icon-wrap x-icon">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                     </svg>
                 </div>
                 <div class="contact-card-body">
-                    <span class="contact-tag">Updates &amp; Chat</span>
+                    <span class="contact-tag">Updates & Chat</span>
                     <h3>X (Twitter)</h3>
                     <p>Follow @sreejithjayadev for latest app updates, upcoming feature announcements, and direct messages.</p>
                     <div class="contact-action-link">
@@ -923,6 +1233,28 @@
                     </div>
                 </div>
             </a>
+
+            <!-- Bug Reporting & Feedback Tips Card -->
+            <div class="contact-card info-card fade-in-up" style="transition-delay: 0.24s;">
+                <div class="contact-icon-wrap info-icon">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                </div>
+                <div class="contact-card-body">
+                    <span class="contact-tag">Tips & Reviews</span>
+                    <h3>Reporting an Issue?</h3>
+                    <p>Sharing your Android version & device model helps us investigate faster. You can also rate ULTRA on Google Play!</p>
+                    <div class="contact-mini-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" rel="noopener noreferrer" class="contact-play-btn">
+                            <span>Google Play Store</span>
+                            <span class="arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -930,7 +1262,7 @@
         <div class="download-container fade-in-up">
             <span class="download-kicker">Private. Flexible. Built for Android.</span>
             <h2>Ready for reminders that match real life?</h2>
-            <p>Download ULTRA and create alarms from time, place, Wi-Fi, Bluetooth, movement, device state, routines, and plain language.</p>
+            <p>Download ULTRA and create alarms from time, place, movement, device state, routines, and plain language.</p>
             <div class="download-buttons">
                 <a href="https://play.google.com/store/apps/details?id=com.ultra.reminders&hl=en_IN" target="_blank" class="play-badge-link">
                     <img alt="Get it on Google Play" src="play_store_badge.svg" style="height: 64px;">
@@ -969,6 +1301,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHsu0021+sXQ16sA1Vts2R+k0G7j6tH8D5V2zJtD5Dk9o/FqL9X0+5/A+x6fKbxQhVz8c7Tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js?v=10"></script>
+    <script src="script.js?v=12"></script>
 </body>
 </html>
